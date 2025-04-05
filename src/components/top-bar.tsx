@@ -11,7 +11,7 @@ import MenuItems from './menu-items';
 
 export default function TopBar() {
   return (
-    <div className="relative z-10 bg-sidebar border-b border-border text-white flex items-center justify-between w-full  px-2 py-1 text-sm select-none">
+    <div className="relative z-10 bg-sidebar border-b border-border text-white flex items-center justify-between w-full  px-2 py-1 text-sm ">
       <div className="flex items-center">
         <VscVscode className="w-5 h-5 text-blue-500 mr-2" />
         <MenuItems />

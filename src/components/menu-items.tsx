@@ -1,3 +1,4 @@
+'use client';
 import { topBarMenus } from '@/constants';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -25,7 +26,7 @@ export default function MenuItems() {
   }, []);
 
   return topBarMenus.map((menu) => (
-    <div key={menu.label} className="relative " ref={dropdownRef}>
+    <div key={menu.label} className="relative text-sm " ref={dropdownRef}>
       <button
         onClick={() => handleClick(menu.label)}
         className={`px-2 py-0.5 hover:bg-border rounded cursor-pointer hidden md:block ${
@@ -36,17 +37,17 @@ export default function MenuItems() {
       </button>
 
       {openMenu === menu.label && (
-        <div className="absolute left-0 top-full mt-1 bg-sidebar border border-border rounded shadow-lg min-w-[180px]">
+        <div className="absolute left-0 top-full mt-2 bg-editor border border-border text-sm rounded shadow min-w-[200px]">
           {menu.items.map((item, index) =>
             item.separator ? (
               <div
-                key={`separator-${index}`}
+                key={`separator-${index}-${item.label}`}
                 className="border-t border-border my-1"
               />
             ) : (
               <div
-                key={item.label}
-                className="flex justify-between items-center px-3 py-1 cursor-pointer"
+                key={`item-${index}-${item.label}`}
+                className="flex justify-between items-center px-3 py-1 cursor-pointer basis-full hover:bg-border"
               >
                 <span>{item.label}</span>
                 {item.shortcut && (
