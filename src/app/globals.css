@@ -1,26 +1,82 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import 'tailwindcss';
 
 :root {
+  /* Base */
   --background: #ffffff;
   --foreground: #171717;
+  --border: #e1e4e8;
+  --shadow: rgba(0, 0, 0, 0.05);
+
+  /* UI */
+  --editor-bg: #f5f5f5;
+  --sidebar-bg: #f3f3f3;
+  --panel-bg: #f8f8f8;
+  --tab-bg: #eaeaea;
+  --tab-active-bg: #ffffff;
+  --tab-border: #dcdcdc;
+
+  /* Syntax Highlighting */
+  --token-keyword: #d73a49;
+  --token-string: #032f62;
+  --token-function: #6f42c1;
+  --token-variable: #005cc5;
+  --token-comment: #6a737d;
+
+  /* Status bar and extras */
+  --statusbar-bg: #eeeeee;
+  --scrollbar-thumb: #c0c0c0;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --border: #2d2d2d;
+    --shadow: rgba(0, 0, 0, 0.3);
+
+    --editor-bg: #1e1e1e;
+    --sidebar-bg: #121213;
+    --panel-bg: #1e1e1e;
+    --tab-bg: #2d2d2d;
+    --tab-active-bg: #1e1e1e;
+    --tab-border: #3c3c3c;
+
+    --token-keyword: #c586c0;
+    --token-string: #ce9178;
+    --token-function: #dcdcaa;
+    --token-variable: #9cdcfe;
+    --token-comment: #6a9955;
+
+    --statusbar-bg: #007acc;
+    --scrollbar-thumb: #4e4e4e;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-border: var(--border);
+  --color-shadow: var(--shadow);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-editor: var(--editor-bg);
+  --color-sidebar: var(--sidebar-bg);
+  --color-panel: var(--panel-bg);
+  --color-tab: var(--tab-bg);
+  --color-tab-active: var(--tab-active-bg);
+  --color-tab-border: var(--tab-border);
+
+  --color-token-keyword: var(--token-keyword);
+  --color-token-string: var(--token-string);
+  --color-token-function: var(--token-function);
+  --color-token-variable: var(--token-variable);
+  --color-token-comment: var(--token-comment);
+
+  --color-statusbar: var(--statusbar-bg);
+  --color-scrollbar-thumb: var(--scrollbar-thumb);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
