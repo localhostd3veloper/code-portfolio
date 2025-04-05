@@ -1,6 +1,7 @@
 'use client';
 
-import { SidebarLinksType, useEditorStore } from '@/store/editor';
+import { useEditorStore } from '@/store';
+import { SidebarLinksType } from '@/types';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect } from 'react';

@@ -5,12 +5,25 @@ import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';
 import BottomBar from '@/components/bottom-bar';
 import Explorer from '@/components/explorer';
 import EditorTabs from '@/components/editor-tabs';
-import { useState } from 'react';
+import Terminal from './terminal';
+import { usePathname } from 'next/navigation';
+import { useEffect } from 'react';
+import { useEditorStore } from '@/store';
 
 export default function MainLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const [terminalVisible, setTerminalVisible] = useState(true);
+  const pathname = usePathname();
+  const { addLog, isTerminalOpen } = useEditorStore();
+  useEffect(() => {
+    addLog(
+      <div className="flex items-center gap-2">
+        <span className="text-green-400">✓</span> GET {pathname}{' '}
+        <span className="text-green-400">200</span> in{' '}
+        {new Date().getUTCMilliseconds()}ms{' '}
+      </div>
+    );
+  }, [pathname]);
   return (
     <div className="min-h-screen h-dvh bg-editor overflow-hidden flex flex-col">
       <TopBar />
@@ -33,18 +46,11 @@ export default function MainLayout({
 
             <PanelResizeHandle className="h-0.5 bg-border hover:bg-blue-500 cursor-row-resize" />
 
-            <Panel
-              defaultSize={20}
-              minSize={0}
-              collapsible
-              onResize={(size) => setTerminalVisible(size > 0)}
-            >
-              {terminalVisible && (
-                <div className="h-full w-full bg-sidebar text-white p-2">
-                  <div className="text-sm font-mono">Terminal</div>
-                </div>
-              )}
-            </Panel>
+            {isTerminalOpen && (
+              <Panel defaultSize={20}>
+                <Terminal />
+              </Panel>
+            )}
           </PanelGroup>
         </Panel>
       </PanelGroup>
