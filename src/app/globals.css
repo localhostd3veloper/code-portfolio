@@ -80,3 +80,19 @@ body {
   color: var(--foreground);
   font-family: 'Manrope', sans-serif;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #35353585;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5555559a;
+}
