@@ -1,23 +1,15 @@
-import { IconType } from 'react-icons';
-import { VscAccount, VscHome } from 'react-icons/vsc';
-import { create } from 'zustand';
+import { StateCreator } from 'zustand';
+import { VscHome } from 'react-icons/vsc';
+import { SidebarLinksType } from '@/types';
 
-export interface SidebarLinksType {
-  label: string;
-  icon: IconType;
-  color: string;
-  href: string;
-  isActive?: boolean;
-}
-
-interface EditorState {
+export interface EditorSlice {
   activeEditors: SidebarLinksType[];
   addEditor: (editor: SidebarLinksType) => void;
   removeEditor: (editor: SidebarLinksType) => void;
   setActiveEditor: (editor: SidebarLinksType) => void;
 }
 
-export const useEditorStore = create<EditorState>((set) => ({
+export const createEditorSlice: StateCreator<EditorSlice> = (set) => ({
   activeEditors: [
     {
       label: 'Welcome',
@@ -46,4 +38,4 @@ export const useEditorStore = create<EditorState>((set) => ({
           : { ...e, isActive: false }
       ),
     })),
-}));
+});
