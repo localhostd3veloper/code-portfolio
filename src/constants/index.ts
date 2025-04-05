@@ -1,3 +1,4 @@
+import { SidebarLinksType } from '@/store/editor';
 import {
   VscFiles,
   VscSearch,
@@ -6,6 +7,11 @@ import {
   VscExtensions,
   VscAccount,
   VscSettingsGear,
+  VscHome,
+  VscBriefcase,
+  VscBook,
+  VscGraph,
+  VscMail,
 } from 'react-icons/vsc';
 
 export const topBarMenus = [
@@ -65,6 +71,27 @@ export const topBarMenus = [
       { label: 'Stop', shortcut: 'Shift+F5' },
     ],
   },
+  {
+    label: 'Terminal',
+    items: [
+      { label: 'New Terminal', shortcut: 'Ctrl+Shift+`' },
+      { label: 'Split Terminal', shortcut: 'Ctrl+Shift+5' },
+      { separator: true },
+      { label: 'Run Task' },
+      { label: 'Run Build Task...', shortcut: 'Ctrl+Shift+B' },
+      { separator: true },
+      { label: 'Configure Build Task...', shortcut: 'Ctrl+Shift+C' },
+    ],
+  },
+  {
+    label: 'Help',
+    items: [
+      { label: 'Welcome', shortcut: 'F1' },
+      { label: 'Keyboard Shortcuts', shortcut: 'Ctrl+Shift+P' },
+      { label: 'Welcome', shortcut: 'F1' },
+      { label: 'Keyboard Shortcuts', shortcut: 'Ctrl+Shift+P' },
+    ],
+  },
 ];
 
 export const sidebarIcons = [
@@ -75,4 +102,43 @@ export const sidebarIcons = [
   { id: 'extensions', icon: VscExtensions, label: 'Extensions' },
   { id: 'account', icon: VscAccount, label: 'Accounts' },
   { id: 'settings', icon: VscSettingsGear, label: 'Settings' },
+];
+
+export const sidebarLinks: SidebarLinksType[] = [
+  {
+    label: 'Welcome',
+    icon: VscHome,
+    color: '#4ade80', // green-400
+    href: '/',
+  },
+  {
+    label: 'About Me',
+    icon: VscAccount,
+    color: '#60a5fa', // blue-400
+    href: '/about-me',
+  },
+  {
+    label: 'Projects',
+    icon: VscBriefcase,
+    color: '#f472b6', // pink-400
+    href: '/projects',
+  },
+  {
+    label: 'Blogs',
+    icon: VscBook,
+    color: '#facc15', // yellow-400
+    href: '/blogs',
+  },
+  {
+    label: 'Work Experience',
+    icon: VscGraph,
+    color: '#a78bfa', // purple-400
+    href: '/work-experience',
+  },
+  {
+    label: 'Contact Me',
+    icon: VscMail,
+    color: '#fb923c', // orange-400
+    href: '/contact-me',
+  },
 ];
