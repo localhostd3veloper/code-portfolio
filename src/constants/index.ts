@@ -1,4 +1,4 @@
-import { SidebarLinksType } from '@/store/editor';
+import { SidebarLinksType } from '@/types';
 import {
   VscFiles,
   VscSearch,
