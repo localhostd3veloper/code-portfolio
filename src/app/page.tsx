@@ -12,8 +12,8 @@ export default function WelcomePage() {
           ENGINEERING | CONVERSATIONAL AI | OPEN SOURCE | PHOTOGRAPHER |
           GUITARIST
         </p>
-        <div className="flex flex-col">
-          <h2 className="text-xl md:text-2xl font-medium">
+        <div className="flex flex-col mt-6">
+          <h2 className="text-lg md:text-xl font-medium">
             Public Repositories
           </h2>
           <p className="text-muted ">
@@ -43,20 +43,22 @@ export default function WelcomePage() {
         <p className="text-muted">
           PS: I am not a social media person, but you can find me here
         </p>
-        <div className="grid grid-cols-1 gap-3">
+        <div className="grid grid-cols-1 gap-3 w-3/4">
           {socialMediaLinks.map(({ name, link, icon: Icon }) => (
-            <div key={name} className="flex items-center gap-2">
-              <a
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-blue-400 duration-300 hover:scale-105"
-              >
-                <Icon className="w-6 h-6" />
+            <a
+              key={name}
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 px-3 py-2  bg-[#1e1e1e] border border-[#3c3c3c] hover:border-blue-500 hover:bg-[#252526] transition-all duration-200"
+            >
+              <Icon className="w-5 h-5 text-gray-300 group-hover:text-blue-400 transition-colors duration-200" />
+              <span className="text-sm text-gray-300 group-hover:text-blue-400 font-medium">
                 {name}
-              </a>
-            </div>
+              </span>
+            </a>
           ))}
+
           <h2 className="text-2xl font-medium">Contact</h2>
           <div>
             <b>Email:</b> Try{' '}

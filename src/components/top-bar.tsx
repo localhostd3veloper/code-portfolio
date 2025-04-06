@@ -1,3 +1,5 @@
+'use client';
+
 import {
   VscArrowLeft,
   VscArrowRight,
@@ -8,8 +10,32 @@ import {
   VscVscode,
 } from 'react-icons/vsc';
 import MenuItems from './menu-items';
+import { useState } from 'react';
 
 export default function TopBar() {
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement
+        .requestFullscreen()
+        .then(() => {
+          setIsFullscreen(true);
+        })
+        .catch((err) => {
+          console.error('Error attempting to enable full-screen mode:', err);
+        });
+    } else {
+      document
+        .exitFullscreen()
+        .then(() => {
+          setIsFullscreen(false);
+        })
+        .catch((err) => {
+          console.error('Error attempting to disable full-screen mode:', err);
+        });
+    }
+  };
+
   return (
     <div className="relative z-10 bg-sidebar border-b border-border  flex items-center justify-between w-full  px-2 py-1 text-sm ">
       <div className="flex items-center">
@@ -28,8 +54,16 @@ export default function TopBar() {
         <VscCopilot className="w-4 h-4 text-muted hidden md:block" />
       </div>
       <div className="hidden items-center gap-2  md:flex">
-        <VscChromeMinimize />
-        <VscChromeMaximize />
+        <button
+          className=""
+          onClick={toggleFullscreen}
+          disabled={!isFullscreen}
+        >
+          <VscChromeMinimize />
+        </button>
+        <button className="" onClick={toggleFullscreen} disabled={isFullscreen}>
+          <VscChromeMaximize />
+        </button>
         <VscClose />
       </div>
     </div>

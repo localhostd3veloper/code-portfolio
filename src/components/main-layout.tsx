@@ -76,12 +76,12 @@ export default function MainLayout({
 
         <PanelResizeHandle className="w-0.5 bg-border hover:bg-blue-500 cursor-col-resize" />
 
-        <Panel minSize={40}>
+        <Panel minSize={40} defaultValue={80}>
           <PanelGroup autoSaveId={'editor'} direction="vertical">
-            <Panel defaultSize={80} minSize={30} collapsible order={0}>
-              <main className="h-full w-full bg-panel">
+            <Panel defaultSize={80} collapsible order={0}>
+              <main className="h-full w-full bg-panel flex flex-col">
                 <EditorTabs />
-                <div className="h-full overflow-y-auto">{children}</div>
+                <div className="overflow-y-auto flex-1">{children}</div>
               </main>
             </Panel>
 
@@ -89,7 +89,7 @@ export default function MainLayout({
 
             <Panel
               id="terminal"
-              defaultSize={30}
+              defaultSize={20}
               order={1}
               minSize={0}
               maxSize={40}
