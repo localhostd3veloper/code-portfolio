@@ -36,6 +36,16 @@ export const createTerminalSlice: StateCreator<TerminalSlice> = (set) => ({
       ),
       timestamp: new Date(),
     },
+    {
+      id: 2,
+      logline: (
+        <li>
+          <span className="text-green-400">✓</span> GET /favicon.ico{' '}
+          <span className="text-green-400">200</span> in 463ms
+        </li>
+      ),
+      timestamp: new Date(),
+    },
   ],
 
   addLog: (log) =>

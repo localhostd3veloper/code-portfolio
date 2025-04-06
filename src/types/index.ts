@@ -7,3 +7,11 @@ export interface SidebarLinksType {
   href: string;
   isActive?: boolean;
 }
+
+export interface IProject {
+  name: string;
+  description: string;
+  techStack: string[];
+  projectURL: string;
+  imageURLs: string[];
+}

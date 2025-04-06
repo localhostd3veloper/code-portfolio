@@ -1,6 +1,5 @@
 import { SidebarLinksType } from '@/types';
 import {
-  VscFiles,
   VscSearch,
   VscSourceControl,
   VscDebugAlt,
@@ -95,7 +94,7 @@ export const topBarMenus = [
 ];
 
 export const sidebarIcons = [
-  { id: 'explorer', icon: VscFiles, label: 'Explorer' },
+  // { id: 'explorer', icon: VscFiles, label: 'Explorer' },
   { id: 'search', icon: VscSearch, label: 'Search' },
   { id: 'scm', icon: VscSourceControl, label: 'Source Control' },
   { id: 'debug', icon: VscDebugAlt, label: 'Run and Debug' },
