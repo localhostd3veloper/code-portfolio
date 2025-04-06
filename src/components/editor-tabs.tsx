@@ -34,19 +34,19 @@ export default function EditorTabs() {
     }
   };
   return (
-    <div className="flex border border-border">
-      {activeEditors.map((editor) => (
+    <div className="flex border border-border overflow-x-auto">
+      {activeEditors?.map((editor) => (
         <div
           key={editor.label}
           className={`px-2 py-1 flex gap-2 items-center ${
             editor.isActive
               ? 'border-t-2 border-x border-x-border border-blue-500 '
-              : 'bg-sidebar text-gray-400'
+              : 'bg-sidebar text-muted'
           }`}
         >
           <Link
             href={editor.href}
-            className="flex gap-2 items-center text-sm text-gray-400"
+            className="flex gap-2 items-center text-sm text-muted"
           >
             <editor.icon className="w-4 h-4" color={editor.color} />
             {editor.label}

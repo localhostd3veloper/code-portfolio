@@ -14,7 +14,11 @@ import {
   VscTrash,
 } from 'react-icons/vsc';
 
-export default function Terminal() {
+export default function Terminal({
+  collapsePanel,
+}: {
+  collapsePanel: () => void;
+}) {
   const { logs, isTerminalOpen, toggleTerminal } = useEditorStore();
   const logRef = useRef<HTMLDivElement>(null);
 
@@ -25,16 +29,16 @@ export default function Terminal() {
   }, [logs]);
   if (!isTerminalOpen) return null;
   return (
-    <div className="h-full w-full bg-sidebar font-mono text-white  text-sm px-4 py-2 flex flex-col">
+    <div className="Z-50 h-full w-full bg-sidebar font-mono   text-sm px-4 py-2 flex flex-col">
       {/* Header */}
       <div className="flex justify-between items-center">
-        <div className="text-xs font-light text-gray-400 tracking-wide underline underline-offset-4 decoration-blue-500">
+        <div className="text-xs font-light  tracking-wide underline underline-offset-4 decoration-blue-500">
           TERMINAL
         </div>
 
-        <div className="text-gray-400 flex items-center gap-2">
+        <div className=" flex items-center gap-2">
           <VscTerminal className="h-4 w-4" />
-          <span className="text-xs text-white">bun</span>
+          <span className="text-xs ">bun</span>
           <VscAdd className="h-4 w-4 cursor-pointer" />
           <VscChevronDown className="h-4 w-4 cursor-pointer" />
           <VscSplitHorizontal className="h-4 w-4 cursor-pointer" />
@@ -43,7 +47,7 @@ export default function Terminal() {
           <VscChevronUp className="h-4 w-4 cursor-pointer" />
           <VscClose
             className="h-4 w-4 cursor-pointer"
-            onClick={toggleTerminal}
+            onClick={collapsePanel}
           />
         </div>
       </div>
@@ -54,9 +58,9 @@ export default function Terminal() {
         <span className="text-green-400 font-semibold">
           localhostdeveloper@seol
         </span>
-        <span className="text-white">:</span>
-        <span className="text-blue-400">~/portfolio</span>
-        <span className="text-white">$</span>
+        <span className="">:</span>
+        <span className="text-blue-400">~/code-portfolio</span>
+        <span className="">$</span>
         <span className="text-green-400">bun dev</span>
       </div>
 
@@ -65,18 +69,18 @@ export default function Terminal() {
         ref={logRef}
         className="mt-2 space-y-1 ml-5 overflow-y-scroll scroll-smooth flex-1"
       >
-        <div className="text-white">
-          <span className="text-purple-400"> ▲ Next.js 15.2.1</span> (Turbopack)
+        <div className="">
+          <span className="text-purple-500"> ▲ Next.js 15.2.1</span> (Turbopack)
         </div>
-        <div className="text-gray-400">
+        <div className="">
           - Local: <span className="text-blue-400">http://localhost:3000</span>
         </div>
-        <div className="text-gray-400">
+        <div className="">
           - Network:{' '}
           <span className="text-blue-400">http://192.168.1.14:3000</span>
         </div>
         {logs.map((log) => (
-          <ol key={log.id} className="text-gray-300">
+          <ol key={log.id} className="">
             {log.logline}
           </ol>
         ))}

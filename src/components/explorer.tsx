@@ -23,14 +23,14 @@ export default function Explorer() {
     addEditor(editor);
   };
   return (
-    <aside className="h-full w-full bg-sidebar flex flex-col p-2 text-white">
+    <aside className="h-full w-full bg-sidebar flex flex-col p-2 ">
       <div className="flex items-center justify-between px-2 mb-2">
-        <h3 className="text-sm text-gray-400 font-light">EXPLORER</h3>
+        <h3 className="text-sm text-muted font-light">EXPLORER</h3>
         <VscEllipsis />
       </div>
 
-      <div className="flex items-center px-2 text-gray-400 justify-between">
-        <p className="text-xs font-semibold">PORTFOLIO</p>
+      <div className="flex items-center px-2 text-muted justify-between">
+        <p className="text-xs font-semibold">CODE-PORTFOLIO</p>
         <div className="flex gap-2">
           <VscNewFile />
           <VscNewFolder />

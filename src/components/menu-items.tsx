@@ -51,7 +51,7 @@ export default function MenuItems() {
               >
                 <span>{item.label}</span>
                 {item.shortcut && (
-                  <span className="text-xs text-gray-400">{item.shortcut}</span>
+                  <span className="text-xs text-muted">{item.shortcut}</span>
                 )}
               </div>
             )
