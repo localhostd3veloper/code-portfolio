@@ -5,6 +5,7 @@
   /* Base */
   --background: #ffffff;
   --foreground: #171717;
+  --muted: #424242;
   --border: #e1e4e8;
   --shadow: rgba(0, 0, 0, 0.05);
 
@@ -31,6 +32,7 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --muted: #8a8a8a;
     --border: #2d2d2d;
     --shadow: rgba(0, 0, 0, 0.3);
 
@@ -55,6 +57,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
   --color-border: var(--border);
   --color-shadow: var(--shadow);
 
@@ -84,7 +87,7 @@ body {
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
-  height: 5px;
+  height: 2px;
 }
 
 /* Handle */
