@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useEditorStore } from '@/store';
 import { usePathname } from 'next/navigation';
 import {
@@ -23,6 +23,7 @@ export default function MainLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   const pathname = usePathname();
   const { addLog, isTerminalOpen } = useEditorStore();
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (!isTerminalOpen) return;
@@ -60,18 +61,34 @@ export default function MainLayout({
       else panel.expand();
     }
   };
+
+  useEffect(() => {
+    if (window.innerWidth < 1024) setIsMobile(true);
+    if (isMobile) {
+      terminalRef.current?.collapse();
+      sidebarRef.current?.collapse();
+    }
+     
+  }, [isMobile]);
+
   return (
     <div className="bg-editor flex h-dvh min-h-screen flex-col">
       <TopBar />
       <PanelGroup autoSaveId={'tabs'} direction="horizontal" className="flex-1">
         <PersistentSidebar togglePanel={togglePanel} toggleSidebar={toggleSidebar} />
-        <Panel defaultSize={20} minSize={15} maxSize={30} collapsible ref={sidebarRef}>
+        <Panel
+          defaultSize={isMobile ? 50 : 20}
+          minSize={0}
+          maxSize={100}
+          collapsible
+          ref={sidebarRef}
+        >
           <Explorer />
         </Panel>
 
         <PanelResizeHandle className="bg-border w-0.5 cursor-col-resize hover:bg-blue-500" />
 
-        <Panel minSize={40} defaultValue={80}>
+        <Panel minSize={0} collapsible defaultSize={isMobile ? 50 : 80}>
           <PanelGroup autoSaveId={'editor'} direction="vertical">
             <Panel defaultSize={80} collapsible order={0}>
               <main className="bg-panel flex h-full w-full flex-col">
