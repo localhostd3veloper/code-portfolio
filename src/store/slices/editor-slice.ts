@@ -1,6 +1,6 @@
-import { StateCreator } from 'zustand';
-import { VscHome } from 'react-icons/vsc';
 import { SidebarLinksType } from '@/types';
+import { VscHome } from 'react-icons/vsc';
+import { StateCreator } from 'zustand';
 
 export interface EditorSlice {
   activeEditors: SidebarLinksType[];
@@ -33,9 +33,7 @@ export const createEditorSlice: StateCreator<EditorSlice> = (set) => ({
   setActiveEditor: (editor) =>
     set((state) => ({
       activeEditors: state.activeEditors.map((e) =>
-        e.label === editor.label
-          ? { ...e, isActive: true }
-          : { ...e, isActive: false }
+        e.label === editor.label ? { ...e, isActive: true } : { ...e, isActive: false },
       ),
     })),
 });

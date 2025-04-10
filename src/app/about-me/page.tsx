@@ -25,7 +25,7 @@ export default function AboutMePage() {
           ))}
         </div>
         <div className="text-lg font-medium md:text-2xl">
-          I'm a <TypewriterEffect />
+          I &apos;m a <TypewriterEffect />
         </div>
         <div className="text-lg font-semibold md:text-2xl">About Me</div>
       </div>

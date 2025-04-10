@@ -1,16 +1,16 @@
 import { SidebarLinksType } from '@/types';
 import {
-  VscSearch,
-  VscSourceControl,
+  VscAccount,
+  VscBook,
+  VscBriefcase,
   VscDebugAlt,
   VscExtensions,
-  VscAccount,
-  VscSettingsGear,
-  VscHome,
-  VscBriefcase,
-  VscBook,
   VscGraph,
+  VscHome,
   VscMail,
+  VscSearch,
+  VscSettingsGear,
+  VscSourceControl,
 } from 'react-icons/vsc';
 
 export const topBarMenus = [

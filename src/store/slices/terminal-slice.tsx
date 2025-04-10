@@ -1,5 +1,5 @@
-import { StateCreator } from 'zustand';
 import { JSX } from 'react';
+import { StateCreator } from 'zustand';
 
 export interface LogType {
   id: number;
@@ -62,6 +62,5 @@ export const createTerminalSlice: StateCreator<TerminalSlice> = (set) => ({
 
   isTerminalOpen: true,
 
-  toggleTerminal: () =>
-    set((state) => ({ isTerminalOpen: !state.isTerminalOpen })),
+  toggleTerminal: () => set((state) => ({ isTerminalOpen: !state.isTerminalOpen })),
 });

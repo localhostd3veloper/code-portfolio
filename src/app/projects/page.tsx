@@ -1,5 +1,6 @@
 import React from 'react';
 import { projectsData } from '@/constants/self';
+import Image from 'next/image';
 
 export default function ProjectsPage() {
   return (
@@ -8,7 +9,7 @@ export default function ProjectsPage() {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {projectsData.map((project) => (
           <div key={project.projectURL} className="border-border border p-4">
-            <img
+            <Image
               src={project.imageURLs[0]}
               alt={project.name}
               width={100}

@@ -1,5 +1,6 @@
 import { create } from 'zustand';
-import { EditorSlice, createEditorSlice } from './slices/editor-slice';
+
+import { createEditorSlice, EditorSlice } from './slices/editor-slice';
 import { createTerminalSlice, TerminalSlice } from './slices/terminal-slice';
 
 type StoreState = EditorSlice & TerminalSlice;

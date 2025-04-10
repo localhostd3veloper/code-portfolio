@@ -1,7 +1,7 @@
 'use client';
 
-import { useEditorStore } from '@/store';
 import React, { useEffect, useRef } from 'react';
+import { useEditorStore } from '@/store';
 import {
   VscAdd,
   VscArrowRight,
@@ -14,12 +14,8 @@ import {
   VscTrash,
 } from 'react-icons/vsc';
 
-export default function Terminal({
-  collapsePanel,
-}: {
-  collapsePanel: () => void;
-}) {
-  const { logs, isTerminalOpen, toggleTerminal } = useEditorStore();
+export default function Terminal({ collapsePanel }: { collapsePanel: () => void }) {
+  const { logs, isTerminalOpen } = useEditorStore();
   const logRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -29,35 +25,30 @@ export default function Terminal({
   }, [logs]);
   if (!isTerminalOpen) return null;
   return (
-    <div className="Z-50 h-full w-full bg-sidebar font-mono   text-sm px-4 py-2 flex flex-col">
+    <div className="Z-50 bg-sidebar flex h-full w-full flex-col px-4 py-2 font-mono text-sm">
       {/* Header */}
-      <div className="flex justify-between items-center">
-        <div className="text-xs font-light  tracking-wide underline underline-offset-4 decoration-blue-500">
+      <div className="flex items-center justify-between">
+        <div className="text-xs font-light tracking-wide underline decoration-blue-500 underline-offset-4">
           TERMINAL
         </div>
 
-        <div className=" flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <VscTerminal className="h-4 w-4" />
-          <span className="text-xs ">bun</span>
+          <span className="text-xs">bun</span>
           <VscAdd className="h-4 w-4 cursor-pointer" />
           <VscChevronDown className="h-4 w-4 cursor-pointer" />
           <VscSplitHorizontal className="h-4 w-4 cursor-pointer" />
           <VscTrash className="h-4 w-4 cursor-pointer" />
           <VscEllipsis className="h-4 w-4 cursor-pointer" />
           <VscChevronUp className="h-4 w-4 cursor-pointer" />
-          <VscClose
-            className="h-4 w-4 cursor-pointer"
-            onClick={collapsePanel}
-          />
+          <VscClose className="h-4 w-4 cursor-pointer" onClick={collapsePanel} />
         </div>
       </div>
 
       {/* Prompt Line */}
-      <div className="flex items-center gap-2 mt-2">
+      <div className="mt-2 flex items-center gap-2">
         <VscArrowRight size={14} color="#ef4444" />
-        <span className="text-green-400 font-semibold">
-          localhostdeveloper@seol
-        </span>
+        <span className="font-semibold text-green-400">localhostdeveloper@seol</span>
         <span className="">:</span>
         <span className="text-blue-400">~/code-portfolio</span>
         <span className="">$</span>
@@ -67,7 +58,7 @@ export default function Terminal({
       {/* Startup Logs */}
       <div
         ref={logRef}
-        className="mt-2 space-y-1 ml-5 overflow-y-scroll scroll-smooth flex-1"
+        className="mt-2 ml-5 flex-1 space-y-1 overflow-y-scroll scroll-smooth"
       >
         <div className="">
           <span className="text-purple-500"> ▲ Next.js 15.2.1</span> (Turbopack)
@@ -76,8 +67,7 @@ export default function Terminal({
           - Local: <span className="text-blue-400">http://localhost:3000</span>
         </div>
         <div className="">
-          - Network:{' '}
-          <span className="text-blue-400">http://192.168.1.14:3000</span>
+          - Network: <span className="text-blue-400">http://192.168.1.14:3000</span>
         </div>
         {logs.map((log) => (
           <ol key={log.id} className="">

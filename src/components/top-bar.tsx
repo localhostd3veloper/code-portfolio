@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import {
   VscArrowLeft,
   VscArrowRight,
@@ -9,8 +10,8 @@ import {
   VscCopilot,
   VscVscode,
 } from 'react-icons/vsc';
+
 import MenuItems from './menu-items';
-import { useState } from 'react';
 
 export default function TopBar() {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -37,28 +38,24 @@ export default function TopBar() {
   };
 
   return (
-    <div className="relative z-10 bg-sidebar border-b border-border  flex items-center justify-between w-full  px-2 py-1 text-sm ">
+    <div className="bg-sidebar border-border relative z-10 flex w-full items-center justify-between border-b px-2 py-1 text-sm">
       <div className="flex items-center">
-        <VscVscode className="w-5 h-5 text-blue-500 mr-2" />
+        <VscVscode className="mr-2 h-5 w-5 text-blue-500" />
         <MenuItems />
       </div>
-      <div className="flex-1 flex items-center justify-center gap-2">
-        <div className="items-center gap-1 hidden md:flex">
-          <VscArrowLeft className="w-4 h-4" />
-          <VscArrowRight className="w-4 h-4 text-muted" />
+      <div className="flex flex-1 items-center justify-center gap-2">
+        <div className="hidden items-center gap-1 md:flex">
+          <VscArrowLeft className="h-4 w-4" />
+          <VscArrowRight className="text-muted h-4 w-4" />
         </div>
         <input
           placeholder="code-portfolio"
-          className="w-full md:w-1/2 rounded-md bg-editor py-0.5  border border-border flex justify-center text-center text-muted outline-none"
+          className="bg-editor border-border text-muted flex w-full justify-center rounded-md border py-0.5 text-center outline-none md:w-1/2"
         />
-        <VscCopilot className="w-4 h-4 text-muted hidden md:block" />
+        <VscCopilot className="text-muted hidden h-4 w-4 md:block" />
       </div>
-      <div className="hidden items-center gap-2  md:flex">
-        <button
-          className=""
-          onClick={toggleFullscreen}
-          disabled={!isFullscreen}
-        >
+      <div className="hidden items-center gap-2 md:flex">
+        <button className="" onClick={toggleFullscreen} disabled={!isFullscreen}>
           <VscChromeMinimize />
         </button>
         <button className="" onClick={toggleFullscreen} disabled={isFullscreen}>

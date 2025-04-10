@@ -14,12 +14,12 @@ import {
 
 export default function BottomBar() {
   return (
-    <div className="bg-sidebar text-xs border-t border-border text-muted  flex justify-between w-full  select-none h-6">
+    <div className="bg-sidebar border-border text-muted flex h-6 w-full justify-between border-t text-xs select-none">
       <div className="flex gap-1">
-        <div className="flex items-center justify-center px-2 bg-blue-500">
+        <div className="flex items-center justify-center bg-blue-500 px-2">
           <VscRemote size={16} />
         </div>
-        <div className=" items-center justify-center gap-1 hidden md:flex">
+        <div className="hidden items-center justify-center gap-1 md:flex">
           <VscSourceControl size={15} />
           <p>main*</p>
           <VscCloudUpload className="ml-2" size={15} />
@@ -30,12 +30,12 @@ export default function BottomBar() {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center gap-2 md:gap-3 pr-4 ">
+      <div className="flex items-center justify-center gap-2 pr-4 md:gap-3">
         <VscGitCommit size={15} className="hidden md:block" />
         localhostd3veloper (45 mins ago)
-        <p className="items-center gap-1 hidden md:flex">Ln 23, Col 3</p>
-        <p className="items-center gap-1 hidden md:flex"> UTF-8</p>
-        <span className="items-center gap-1 hidden md:flex">
+        <p className="hidden items-center gap-1 md:flex">Ln 23, Col 3</p>
+        <p className="hidden items-center gap-1 md:flex"> UTF-8</p>
+        <span className="hidden items-center gap-1 md:flex">
           <VscBracketDot size={15} /> Typescript JSX
         </span>
         <VscCopilot size={15} className="hidden md:block" />

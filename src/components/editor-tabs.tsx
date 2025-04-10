@@ -1,10 +1,10 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useEditorStore } from '@/store';
 import { SidebarLinksType } from '@/types';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { useEffect } from 'react';
 import { VscClose } from 'react-icons/vsc';
 
 export default function EditorTabs() {
@@ -17,6 +17,7 @@ export default function EditorTabs() {
     if (editor) {
       setActiveEditor(editor);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   const handleEditorClose = (editor: SidebarLinksType) => {
@@ -34,25 +35,22 @@ export default function EditorTabs() {
     }
   };
   return (
-    <div className="flex border border-border overflow-x-auto">
+    <div className="border-border flex overflow-x-auto border">
       {activeEditors?.map((editor) => (
         <div
           key={editor.label}
-          className={`px-2 py-1 flex gap-2 items-center ${
+          className={`flex items-center gap-2 px-2 py-1 ${
             editor.isActive
-              ? 'border-t-2 border-x border-x-border border-blue-500 '
+              ? 'border-x-border border-x border-t-2 border-blue-500'
               : 'bg-sidebar text-muted'
           }`}
         >
-          <Link
-            href={editor.href}
-            className="flex gap-2 items-center text-sm text-muted"
-          >
-            <editor.icon className="w-4 h-4" color={editor.color} />
+          <Link href={editor.href} className="text-muted flex items-center gap-2 text-sm">
+            <editor.icon className="h-4 w-4" color={editor.color} />
             {editor.label}
           </Link>
           <button onClick={() => handleEditorClose(editor)}>
-            <VscClose className="w-4 h-4 cursor-pointer" />
+            <VscClose className="h-4 w-4 cursor-pointer" />
           </button>
         </div>
       ))}

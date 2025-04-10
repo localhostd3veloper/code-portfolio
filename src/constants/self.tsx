@@ -172,8 +172,7 @@ export const homepageRepos = [
   },
   {
     name: 'notion-replication',
-    description:
-      'This is Notion - Task Page clone with Drag and Drop functionality',
+    description: 'This is Notion - Task Page clone with Drag and Drop functionality',
     url: 'https://github.com/localhostd3veloper/notion-replication',
   },
   {

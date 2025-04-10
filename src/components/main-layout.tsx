@@ -1,19 +1,22 @@
 'use client';
-import PersistentSidebar from '@/components/persistent-sidebar';
-import TopBar from '@/components/top-bar';
+
+import { useEffect, useRef } from 'react';
+import { useEditorStore } from '@/store';
+import { usePathname } from 'next/navigation';
 import {
   ImperativePanelHandle,
   Panel,
   PanelGroup,
   PanelResizeHandle,
 } from 'react-resizable-panels';
+
 import BottomBar from '@/components/bottom-bar';
-import Explorer from '@/components/explorer';
 import EditorTabs from '@/components/editor-tabs';
+import Explorer from '@/components/explorer';
+import PersistentSidebar from '@/components/persistent-sidebar';
+import TopBar from '@/components/top-bar';
+
 import Terminal from './terminal';
-import { usePathname } from 'next/navigation';
-import { useEffect, useRef } from 'react';
-import { useEditorStore } from '@/store';
 
 export default function MainLayout({
   children,
@@ -27,10 +30,11 @@ export default function MainLayout({
     addLog(
       <div className="flex items-center gap-2">
         <span className="text-green-400">✓</span> GET {pathname}{' '}
-        <span className="text-green-400">200</span> in{' '}
-        {new Date().getUTCMilliseconds()}ms{' '}
-      </div>
+        <span className="text-green-400">200</span> in {new Date().getUTCMilliseconds()}
+        ms{' '}
+      </div>,
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   const terminalRef = useRef<ImperativePanelHandle>(null);
@@ -57,35 +61,26 @@ export default function MainLayout({
     }
   };
   return (
-    <div className="min-h-screen h-dvh bg-editor  flex flex-col">
+    <div className="bg-editor flex h-dvh min-h-screen flex-col">
       <TopBar />
       <PanelGroup autoSaveId={'tabs'} direction="horizontal" className="flex-1">
-        <PersistentSidebar
-          togglePanel={togglePanel}
-          toggleSidebar={toggleSidebar}
-        />
-        <Panel
-          defaultSize={20}
-          minSize={15}
-          maxSize={30}
-          collapsible
-          ref={sidebarRef}
-        >
+        <PersistentSidebar togglePanel={togglePanel} toggleSidebar={toggleSidebar} />
+        <Panel defaultSize={20} minSize={15} maxSize={30} collapsible ref={sidebarRef}>
           <Explorer />
         </Panel>
 
-        <PanelResizeHandle className="w-0.5 bg-border hover:bg-blue-500 cursor-col-resize" />
+        <PanelResizeHandle className="bg-border w-0.5 cursor-col-resize hover:bg-blue-500" />
 
         <Panel minSize={40} defaultValue={80}>
           <PanelGroup autoSaveId={'editor'} direction="vertical">
             <Panel defaultSize={80} collapsible order={0}>
-              <main className="h-full w-full bg-panel flex flex-col">
+              <main className="bg-panel flex h-full w-full flex-col">
                 <EditorTabs />
-                <div className="overflow-y-auto flex-1">{children}</div>
+                <div className="flex-1 overflow-y-auto">{children}</div>
               </main>
             </Panel>
 
-            <PanelResizeHandle className="h-0.5 bg-border hover:bg-blue-500 cursor-row-resize" />
+            <PanelResizeHandle className="bg-border h-0.5 cursor-row-resize hover:bg-blue-500" />
 
             <Panel
               id="terminal"

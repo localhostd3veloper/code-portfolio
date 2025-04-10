@@ -1,7 +1,7 @@
 'use client';
 
-import { sidebarIcons } from '@/constants';
 import React from 'react';
+import { sidebarIcons } from '@/constants';
 import { VscFiles, VscTerminal } from 'react-icons/vsc';
 
 export default function PersistentSidebar({
@@ -12,30 +12,30 @@ export default function PersistentSidebar({
   toggleSidebar: () => void;
 }) {
   return (
-    <div className="h-full w-14 bg-sidebar flex flex-col border-r border-border gap-3 py-2">
+    <div className="bg-sidebar border-border flex h-full w-14 flex-col gap-3 border-r py-2">
       <button
-        className="p-2 hover:bg-token-hover text-xl border-l-2 border-blue-500 flex items-center justify-center cursor-pointer hover:text-foreground"
+        className="hover:bg-token-hover hover:text-foreground flex cursor-pointer items-center justify-center border-l-2 border-blue-500 p-2 text-xl"
         title="Terminal"
         onClick={toggleSidebar}
       >
-        <VscFiles className="w-6 h-6" />
+        <VscFiles className="h-6 w-6" />
       </button>
-      {sidebarIcons.map(({ id, icon: Icon, label }, index) => (
+      {sidebarIcons.map(({ id, icon: Icon, label }) => (
         <button
           key={id}
-          className={`p-2 hover:bg-token-hover text-xl text-muted flex items-center justify-center cursor-pointer hover:text-foreground`}
+          className={`hover:bg-token-hover text-muted hover:text-foreground flex cursor-pointer items-center justify-center p-2 text-xl`}
           title={label}
         >
-          <Icon className="w-6 h-6" />
+          <Icon className="h-6 w-6" />
         </button>
       ))}
 
       <button
-        className="p-2 hover:bg-token-hover text-xl text-amber-600 flex items-center justify-center cursor-pointer hover:text-foreground"
+        className="hover:bg-token-hover hover:text-foreground flex cursor-pointer items-center justify-center p-2 text-xl text-amber-600"
         title="Terminal"
         onClick={togglePanel}
       >
-        <VscTerminal className="w-6 h-6" />
+        <VscTerminal className="h-6 w-6" />
       </button>
     </div>
   );

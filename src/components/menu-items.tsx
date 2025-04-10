@@ -1,6 +1,7 @@
 'use client';
-import { topBarMenus } from '@/constants';
+
 import React, { useEffect, useRef, useState } from 'react';
+import { topBarMenus } from '@/constants';
 
 export default function MenuItems() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -13,10 +14,7 @@ export default function MenuItems() {
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(e.target as Node)
-      ) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setOpenMenu(null);
       }
     };
@@ -26,10 +24,10 @@ export default function MenuItems() {
   }, []);
 
   return topBarMenus.map((menu) => (
-    <div key={menu.label} className="relative text-sm " ref={dropdownRef}>
+    <div key={menu.label} className="relative text-sm" ref={dropdownRef}>
       <button
         onClick={() => handleClick(menu.label)}
-        className={`px-2 py-0.5 hover:bg-border rounded cursor-pointer hidden md:block ${
+        className={`hover:bg-border hidden cursor-pointer rounded px-2 py-0.5 md:block ${
           openMenu === menu.label ? 'bg-[#3c3c3c]' : ''
         }`}
       >
@@ -37,24 +35,24 @@ export default function MenuItems() {
       </button>
 
       {openMenu === menu.label && (
-        <div className="absolute left-0 top-full mt-2 bg-editor border border-border text-sm rounded shadow min-w-[200px]">
+        <div className="bg-editor border-border absolute top-full left-0 mt-2 min-w-[200px] rounded border text-sm shadow">
           {menu.items.map((item, index) =>
             item.separator ? (
               <div
                 key={`separator-${index}-${item.label}`}
-                className="border-t border-border my-1"
+                className="border-border my-1 border-t"
               />
             ) : (
               <div
                 key={`item-${index}-${item.label}`}
-                className="flex justify-between items-center px-3 py-1 cursor-pointer basis-full hover:bg-border"
+                className="hover:bg-border flex basis-full cursor-pointer items-center justify-between px-3 py-1"
               >
                 <span>{item.label}</span>
                 {item.shortcut && (
-                  <span className="text-xs text-muted">{item.shortcut}</span>
+                  <span className="text-muted text-xs">{item.shortcut}</span>
                 )}
               </div>
-            )
+            ),
           )}
         </div>
       )}
