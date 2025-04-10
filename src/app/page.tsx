@@ -11,7 +11,10 @@ export default function WelcomePage() {
         <p className="text-muted text-xs md:text-base">
           ENGINEERING | CONVERSATIONAL AI | OPEN SOURCE | PHOTOGRAPHER | GUITARIST
         </p>
-        <div className="mt-6 flex flex-col">
+        <div className="mt-2 flex flex-col md:mt-6">
+          <p className="text-muted block text-sm md:hidden">
+            Please do visit the desktop version for a better experience
+          </p>
           <h2 className="text-lg font-medium md:text-xl">Public Repositories</h2>
           <p className="text-muted">
             Please check out my repositories on GitHub, drop a ⭐ if you like it
