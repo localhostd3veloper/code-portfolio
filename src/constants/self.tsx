@@ -63,7 +63,7 @@ export const projectsData: IProject[] = [
       'A Question Paper Generator that generates Question Papers for institutes and universities using AI.',
     techStack: ['React', 'NodeJS', 'Express', 'MongoDB'],
     projectURL: 'http://generator.dot100.in',
-    imageURLs: ['/register.png', 'paper-gen.png', '/landing-2.png'],
+    imageURLs: ['/register.png', '/paper-gen.png', '/landing-2.png'],
   },
   {
     name: 'Mac OS Clone',
@@ -91,45 +91,56 @@ export const projectsData: IProject[] = [
 
 export const experienceItems = [
   {
-    title: 'Sep 2023 - Present', // Date
-    cardTitle: 'Full Stack Engineer', // Job Title
-    cardSubtitle: 'Freelance', // Company Name
-    cardDetailedText: `Full Stack Engineer. I am currently working on the development of a web application using JS/TS, Node.js, and React for several clients. I am also working on my personal projects.`,
-    url: 'https://www.upwork.com',
+    title: 'Aug 2024 - Present',
+    cardTitle: 'SDE 2',
+    jobRole: 'Full Stack Lead',
+    cardSubtitle: 'Treacle Tech.',
+    cardDetailedText: `- Led and contributed to full-stack development efforts alongside a team of 5+ developers, while setting up scalable development pipelines to streamline workflows.\n- Redesigned the database architecture, increasing scalability by 10x, supporting future growth and improving query performance.\n- Reduced CPU utilization on low-resource VMs from 90%+ to 15–20% by identifying performance bottlenecks and refactoring resource-heavy processes.\n- Migrated a monolithic architecture to microservices, resulting in 5x faster development and debugging capabilities.\n- Implemented automated CI/CD pipelines using Docker and custom shell scripts, enabling seamless deployment for 10+ unique client environments.\n- Optimized MongoDB aggregation pipelines, reducing query times from 10+ seconds to 700ms, dramatically improving API response times.`,
+    url: 'https://treacletech.com',
   },
   {
-    title: 'Oct 2022 - Dec 2022', // Date
-    cardTitle: 'Frontend Developer', // Job Title
-    cardSubtitle: 'Treacle Tech.', // Company Name
-    cardDetailedText: `
-      Replicated complex Figma designs using various frameworks on react. Collaborating with cross-functional teams to define, design, and ship new features. Practiced various cyber security concepts and types of attacks on virtual
-      machines and docker containers.`,
-    url: 'https://www.treacletech.com/',
+    title: 'Apr 2024 - July 2024',
+    cardTitle: 'Software Engineer',
+    jobRole: 'Full Stack Lead',
+    cardSubtitle: 'GENIE AI',
+    cardDetailedText: `- Managed a distributed team of 10 developers across multiple time zones, establishing efficient development pipelines and assigning tasks to ensure continuous delivery.\n- Led agile sprints across 3 cross-functional teams, consistently delivering client demos on schedule and improving overall client satisfaction.\n- Refactored and optimized legacy codebases, removing ~2,000+ lines of redundant code per project to improve maintainability and future developer onboarding.\n- Conducted in-depth code reviews for an average of 10 GitHub pull requests daily, enforcing best practices and significantly improving team-wide code quality.`,
+    url: 'https://albisai.com/',
   },
   {
-    title: 'July 2022 - Sep 2022', // Date
-    cardTitle: 'Software Developer', // Job Title
-    cardSubtitle: 'Listnr, Inc.', // Company Name
-    cardDetailedText: `Replicating complex UI's from the wireframes and parallelly writing logic for the same. Improved the lighthouse score by reducing the overall bundle size of the webpack which made the platform 30% faster. Co-authored pull requests on GitHub with other engineers on the team`,
-    url: 'https://www.listnr.tech/',
+    title: 'Oct 2023 - Mar 2024',
+    cardTitle: 'Full Stack Engineer (Freelance)',
+    jobRole: 'Founding Team Member',
+    cardSubtitle: 'TestNTrack',
+    cardDetailedText: `- Designed and implemented a comprehensive admin dashboard for educational institutes, reducing manual administrative tasks by 40% through process automation.\n- Developed and secured APIs for encrypted OTP-based user authentication, increasing login security by 30% and enhancing user trust.\n- Integrated robust modules for exam management, student records, and performance tracking, streamlining operations and significantly improving data accessibility for staff.`,
+    url: 'https://www.testntrack.com/',
   },
   {
-    title: 'Feb 2022 - Jul 2022', // Date
-    cardTitle: 'Full Stack Developer & Chatbot Expert', // Job Title
-    cardSubtitle: 'Botosynthesis®', // Company Name
-    cardDetailedText: `Writing bug-free, modular and reusable code for developing Full Stack Applications. Supervising Interns in developing AI-based chatbots on various platforms like - WhatsApp, Facebook Messenger, Instagram, etc. Using the Botosynthesis.ai platform, I created rule-based chatbots with extra automation features`,
-    url: 'https://www.botosynthesis.ai/',
+    title: 'Oct 2022 - Jan 2023',
+    cardTitle: 'Frontend Engineer Intern',
+    jobRole: 'Product Development Team',
+    cardSubtitle: 'Treacle Tech.',
+    cardDetailedText: `- Translated complex Figma designs into fully responsive and interactive React-based user interfaces, achieving a 100% match to design specifications.\n- Optimized UI components for performance, reducing load times by 20% and enhancing the overall user experience.\n- Gained hands-on experience with cyber-attack simulations (SQL injection, XSS, DoS), strengthening understanding of secure coding practices and improving system resilience.`,
+    url: 'https://treacletech.com',
+  },
+  {
+    title: 'Feb 2022 - Jul 2022',
+    cardTitle: 'Full Stack Developer Intern',
+    jobRole: 'Founding Team Member',
+    cardSubtitle: 'Botosynthesis®',
+    cardDetailedText: `- Developed and deployed 5 full-stack applications across 3 distinct industries, resulting in improved system performance and increased user engagement.\n- Designed and launched 3 conversational APIs, enhancing the platform experience for 100+ active users through personalized, real-time interactions.\n- Managed multiple projects concurrently and contributed to the creation of a structured Software Development Life Cycle (SDLC) for a client, collaborating closely with a tech team of 8+ engineers.\n- Led and mentored a team of 6 interns, guiding the successful development of 20+ chatbots that automated over 200 weekly customer interactions, significantly boosting engagement and operational efficiency.`,
+    url: 'https://botosynthesis.ai/',
   },
   {
     title: 'Oct 2020 - Jan 2022',
-    cardTitle: 'Full Stack Web Developer Intern',
+    cardTitle: 'Trainee Intern & Full Stack Web Developer Intern',
+    jobRole: 'Founding Team Member',
     cardSubtitle: 'Botosynthesis®',
     cardDetailedText: `Developed fully-fledged Full-Stack Applications collaborating with other
       engineers for various companies using MERN.
       Developed complex conversational APIs and Algorithms. I've also played a major
       role at the the backend of a few conventional AI platforms.
       Working on projects and simultaneously creating SDLC for the same`,
-    url: 'https://www.botosynthesis.ai/',
+    url: 'https://botosynthesis.ai/',
   },
 ];
 export const blogs = [
