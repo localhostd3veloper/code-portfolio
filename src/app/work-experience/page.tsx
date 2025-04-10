@@ -1,4 +1,5 @@
 import { experienceItems } from '@/constants/self';
+import Link from 'next/link';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
 export default function WorkExperiencePage() {
@@ -19,14 +20,14 @@ export default function WorkExperiencePage() {
                 {exp.cardDetailedText}
               </p>
               {exp.url && (
-                <a
+                <Link
                   href={exp.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-xs text-blue-400 hover:underline"
                 >
                   Organization <FaExternalLinkAlt className="h-3 w-3" />
-                </a>
+                </Link>
               )}
             </div>
           </div>
