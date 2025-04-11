@@ -99,7 +99,7 @@ Here are some of the core dependencies used in this project:
 
 ---
 
-## Future Planned Features
+## 🚀 Future Planned Features
 
 Want to contribute? Don't worry, I'm always open to new ideas and suggestions.
 

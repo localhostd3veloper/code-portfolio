@@ -7,7 +7,9 @@ import Image from 'next/image';
 
 export default function BlogCards() {
   return blogs.map(({ description, hashtags, imgURL, name, url }) => (
-    <motion.div
+    <motion.a
+      href={url}
+      target="_blank"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -37,6 +39,6 @@ export default function BlogCards() {
           ))}
         </div>
       </div>
-    </motion.div>
+    </motion.a>
   ));
 }
