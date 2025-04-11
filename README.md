@@ -1,72 +1,106 @@
-# Code Portfolio
+# 🚀 Code Portfolio
 
-Hi everyone this is Gautam Anand, if you're reading this you are one of the few developers out there who care about proper documentation and luckily i'm one of them.
+Hey everyone 👋 I'm **Gautam Anand**.  
+If you're reading this, you're one of the few developers who care about _proper documentation_ — and guess what? I'm one of them too 💻✨
 
-## About Me
+---
 
-I am a Full Stack Engineer working in a Cyber Security Startup Incubated in IIT Kanpur
+## 👤 About Me
 
-## Tech Stack
+I'm a **Full Stack Engineer** currently working at a **Cyber Security Startup** incubated at **IIT Kanpur** 🔐🏛️  
+Passionate about clean code, performance, and crafting slick UI experiences.
 
-- NextJS
-- ReactJS
-- TailwindCSS
-- TypeScript
-- Framer Motion
-- Zustand
+---
 
-## Pre Requisites
+## 🧠 Tech Stack
 
-- [NodeJS](https://nodejs.org/en/download/)
-- [Bun](https://bun.sh/)
-- [A Code Editor](https://code.visualstudio.com/) ? xd
+Some of the tools I love and use daily:
 
-## Getting Started
+- ⚡ **Next.js**
+- ⚛️ **React.js**
+- 🎨 **TailwindCSS**
+- 🟦 **TypeScript**
+- 🎞️ **Framer Motion**
+- 🐻 **Zustand**
+- ▲ **Vercel**
+- 📈 **Vercel Analytics & Speed Insights**
+- 🐰 **Bun**
+- 🧹 **lint-staged**
+- 🧼 **Prettier**
 
-- Clone the repository
+> 📌 _Always happy to learn new technologies and adapt fast to ever-changing dev landscapes._
+
+---
+
+## ✅ Pre-Requisites
+
+Make sure you’ve got these installed before you run the project:
+
+> 💡 _Required tools to run this project locally:_
+
+- 📦 [**Node.js**](https://nodejs.org/en/download/)
+- ⚡ [**Bun**](https://bun.sh/)
+- 🧑‍💻 [**Code Editor (VSCode?)**](https://code.visualstudio.com/) — _well... obviously 😄_
+
+---
+
+## 🚀 Getting Started
+
+Clone the repo and run the project in just a few steps:
 
 ```bash
 git clone https://github.com/localhostd3veloper/code-portfolio.git
+cd code-portfolio
 ```
 
-- Install dependencies
+Install dependencies with:
 
 ```bash
 bun install
 ```
 
-- Run the app
+Start the dev server:
 
 ```bash
 bun run dev
 ```
 
-- Build the app
+Build the app for production:
 
 ```bash
 bun run build
 ```
 
-## Dependencies List
+> 🔧 _Project uses Bun as the package manager and task runner._
 
-Also in: `package.json`
+---
+
+## 📦 Dependencies
+
+Here are some of the core dependencies used in this project:
 
 ```json
-  "dependencies": {
-    "@vercel/speed-insights": "^1.2.0",
-    "motion": "^12.6.3",
-    "next": "15.2.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-icons": "^5.5.0",
-    "react-resizable-panels": "^2.1.7",
-    "react-responsive-carousel": "^3.2.23",
-    "react-simple-typewriter": "^5.0.1",
-    "sharp": "^0.34.0",
-    "zustand": "^5.0.3"
-  }
+"dependencies": {
+  "@vercel/speed-insights": "^1.2.0",
+  "motion": "^12.6.3",
+  "next": "15.2.1",
+  "react": "^19.0.0",
+  "react-dom": "^19.0.0",
+  "react-icons": "^5.5.0",
+  "react-resizable-panels": "^2.1.7",
+  "react-responsive-carousel": "^3.2.23",
+  "react-simple-typewriter": "^5.0.1",
+  "sharp": "^0.34.0",
+  "zustand": "^5.0.3"
+}
 ```
 
-## License
+📁 Also available in `package.json`.
 
-[MIT License](https://github.com/localhostd3veloper/code-portfolio/blob/main/LICENSE)
+---
+
+## 🪪 License
+
+This project is licensed under the [**MIT License**](https://github.com/localhostd3veloper/code-portfolio/blob/main/LICENSE) 📝
+
+> 💬 _Feel free to fork, star, and use it for your own projects. And don’t forget to drop a ⭐ if this helped you!_
