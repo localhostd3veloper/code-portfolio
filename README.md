@@ -32,6 +32,17 @@ Some of the tools I love and use daily:
 
 ---
 
+## 🚀 Future Planned Features
+
+Want to contribute? Don't worry, I'm always open to new ideas and suggestions.
+
+- [ ] Add more animations, (framer motion)
+- [ ] Themes Settings
+- [ ] Add Shortcuts Page inside Settings
+- [ ] Suggestions?
+
+---
+
 ## ✅ Pre-Requisites
 
 Make sure you’ve got these installed before you run the project:
@@ -97,16 +108,6 @@ Here are some of the core dependencies used in this project:
 
 📁 Also available in `package.json`.
 
----
-
-## 🚀 Future Planned Features
-
-Want to contribute? Don't worry, I'm always open to new ideas and suggestions.
-
-- [] Add more animations, (framer motion)
-- [] Themes Settings
-- [] Add Shortcuts Page inside Settings
-- [] Suggestions?
 
 ---
 
