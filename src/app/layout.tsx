@@ -4,6 +4,7 @@ import { Inconsolata, Manrope } from 'next/font/google';
 
 import './globals.css';
 
+import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import MainLayout from '@/components/main-layout';
@@ -35,6 +36,7 @@ export default function RootLayout({
       >
         <MainLayout>
           {children}
+          <Analytics />
           <SpeedInsights />
         </MainLayout>
       </body>
