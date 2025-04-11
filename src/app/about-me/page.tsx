@@ -6,7 +6,7 @@ import TypewriterEffect from './components/typewriter-effect';
 
 export default function AboutMePage() {
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-4 p-4 md:p-20">
+    <div className="flex flex-col items-center justify-center gap-4 p-4 md:p-12 lg:p-20">
       <div className="flex flex-col items-center gap-6">
         <Image
           src="/profile.jpg"

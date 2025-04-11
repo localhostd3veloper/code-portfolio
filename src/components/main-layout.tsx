@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useEditorStore } from '@/store';
+import { motion } from 'motion/react';
 import { usePathname } from 'next/navigation';
 import {
   ImperativePanelHandle,
@@ -68,7 +69,6 @@ export default function MainLayout({
       terminalRef.current?.collapse();
       sidebarRef.current?.collapse();
     }
-     
   }, [isMobile]);
 
   return (
@@ -108,7 +108,15 @@ export default function MainLayout({
               collapsible
               ref={terminalRef}
             >
-              <Terminal collapsePanel={collapsePanel} />
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 50 }}
+                transition={{ duration: 0.3 }}
+                className="h-full w-full"
+              >
+                <Terminal collapsePanel={collapsePanel} />
+              </motion.div>
             </Panel>
           </PanelGroup>
         </Panel>

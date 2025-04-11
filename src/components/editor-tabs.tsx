@@ -46,8 +46,11 @@ export default function EditorTabs() {
           }`}
         >
           <Link href={editor.href} className="text-muted flex items-center gap-2 text-sm">
-            <editor.icon className="h-4 w-4" color={editor.color} />
-            {editor.label}
+            <editor.icon className="min-h-4 min-w-4" color={editor.color} />
+            <span className="overflow-hidden text-ellipsis whitespace-nowrap">
+              {' '}
+              {editor.label}
+            </span>
           </Link>
           <button onClick={() => handleEditorClose(editor)}>
             <VscClose className="h-4 w-4 cursor-pointer" />

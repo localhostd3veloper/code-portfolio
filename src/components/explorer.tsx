@@ -4,6 +4,7 @@ import React from 'react';
 import { sidebarLinks } from '@/constants';
 import { useEditorStore } from '@/store';
 import { SidebarLinksType } from '@/types';
+import { motion } from 'motion/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
@@ -24,14 +25,23 @@ export default function Explorer() {
     addEditor(editor);
   };
   return (
-    <aside className="bg-sidebar flex h-full w-full flex-col p-2">
+    <motion.aside
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="bg-sidebar flex h-full w-full flex-col p-2"
+    >
       <div className="mb-2 flex items-center justify-between px-2">
         <h3 className="text-muted text-sm font-light">EXPLORER</h3>
         <VscEllipsis />
       </div>
 
       <div className="text-muted flex items-center justify-between px-2">
-        <p className="text-xs font-semibold">CODE-PORTFOLIO</p>
+        <p
+          title="CODE-PORTFOLIO"
+          className="overflow-hidden text-xs font-medium text-ellipsis whitespace-nowrap"
+        >
+          CODE-PORTFOLIO
+        </p>
         <div className="flex gap-2">
           <VscNewFile />
           <VscNewFolder />
@@ -45,16 +55,18 @@ export default function Explorer() {
           <Link
             href={href}
             key={label}
-            className={`hover:bg-editor/80 flex w-full items-center space-x-2 px-3 py-1 text-left text-sm duration-300 ${
+            className={`hover:bg-editor/80 flex w-full items-center space-x-2 overflow-hidden px-3 py-1 text-sm duration-300 ${
               pathname === href && 'bg-editor'
             }`}
             onClick={() => handleNewEditor({ label, icon: Icon, color, href })}
           >
-            <Icon style={{ color }} className="h-4 w-4" />
-            <span>{label}</span>
+            <Icon style={{ color }} className="min-h-4 min-w-4" />
+            <span className="overflow-hidden text-ellipsis whitespace-nowrap">
+              {label}
+            </span>
           </Link>
         ))}
       </nav>
-    </aside>
+    </motion.aside>
   );
 }
