@@ -4,6 +4,8 @@ import { Inconsolata, Manrope } from 'next/font/google';
 
 import './globals.css';
 
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 import MainLayout from '@/components/main-layout';
 
 const manrope = Manrope({
@@ -31,7 +33,10 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} ${inconsolata.variable} bg-background text-foreground antialiased`}
       >
-        <MainLayout>{children}</MainLayout>
+        <MainLayout>
+          {children}
+          <SpeedInsights />
+        </MainLayout>
       </body>
     </html>
   );
