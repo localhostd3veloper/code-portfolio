@@ -2,14 +2,20 @@
 
 import React from 'react';
 import { IProject } from '@/types';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 import { Carousel } from 'react-responsive-carousel';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 
-export default function ProjectCard(project: IProject) {
+export default function ProjectCard({ project }: { project: IProject }) {
   return (
-    <div className="border-border flex flex-col gap-3 border p-4">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="border-border flex flex-col gap-3 border p-4"
+    >
       <Carousel
         showThumbs={false}
         showStatus={false}
@@ -56,6 +62,6 @@ export default function ProjectCard(project: IProject) {
           </span>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

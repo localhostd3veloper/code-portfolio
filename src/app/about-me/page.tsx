@@ -2,11 +2,13 @@ import React from 'react';
 import { socialMediaLinks } from '@/constants/self';
 import Image from 'next/image';
 
+import FadeIn from '@/components/fade-in';
+
 import TypewriterEffect from './components/typewriter-effect';
 
 export default function AboutMePage() {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 p-4 md:p-12 lg:p-20">
+    <FadeIn className="flex flex-col items-center justify-center gap-4 p-4 md:p-12 lg:p-20">
       <div className="flex flex-col items-center gap-6">
         <Image
           src="/profile.jpg"
@@ -40,6 +42,6 @@ export default function AboutMePage() {
         In my free time, I enjoy playing video games, working out, and spending time with
         friends and family. I also have a passion for singing and photography.
       </div>
-    </div>
+    </FadeIn>
   );
 }
