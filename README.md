@@ -99,6 +99,17 @@ Here are some of the core dependencies used in this project:
 
 ---
 
+## Future Planned Features
+
+Want to contribute? Don't worry, I'm always open to new ideas and suggestions.
+
+- [] Add more animations, (framer motion)
+- [] Themes Settings
+- [] Add Shortcuts Page inside Settings
+- [] Suggestions?
+
+---
+
 ## 🪪 License
 
 This project is licensed under the [**MIT License**](https://github.com/localhostd3veloper/code-portfolio/blob/main/LICENSE) 📝
