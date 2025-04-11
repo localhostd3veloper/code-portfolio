@@ -33,8 +33,8 @@ export const socialMediaLinks = [
 
 export const typeWriterText = [
   'Tech Enthusiast',
-  'Frontend Developer',
-  'Full Stack Developer',
+  'Frontend Engineer',
+  'Full Stack Engineer',
   'Guitarist',
   'Photographer',
   'Blogger',
@@ -42,11 +42,26 @@ export const typeWriterText = [
 
 export const projectsData: IProject[] = [
   {
+    name: 'Code Portfolio',
+    description: 'This very own project, ',
+    techStack: ['Next.JS', 'React', 'TailwindCSS', 'Zustand', 'More..'],
+    projectURL: '#',
+    imageURLs: ['/portfolio-1.png', '/portfolio-2.png', '/portfolio-3.png'],
+  },
+  {
+    name: 'Drift UI (Under Construction)',
+    description:
+      'This is a component library for TailwindCSS and GSAP, this is a work in progress and will be completly open sourced available on npmjs',
+    techStack: ['Next.JS', 'React', 'TailwindCSS', 'Zustand', 'More..'],
+    projectURL: '#',
+    imageURLs: ['/drift-ui-1.png', '/drift-ui-2.png', '/drift-ui-3.png'],
+  },
+  {
     name: 'Institute Dashboard',
     description:
       'Institute Dashboard for DOT100 for scheduling, monitoring, evaluating and managing students and ongoing examinations',
     techStack: ['React', 'NodeJS', 'Express', 'MongoDB'],
-    projectURL: 'http://dashboard.dot100.in',
+    projectURL: '#',
     imageURLs: ['/login.png', '/dashboard-1.png', '/dashboard-2.png'],
   },
   {
@@ -54,7 +69,7 @@ export const projectsData: IProject[] = [
     description:
       'A web application that allows users to book tickets for heritage sites.',
     techStack: ['React', 'Python', 'FastAPI', 'MongoDB'],
-    projectURL: 'https://devcubes-ticketless-66427.web.app/',
+    projectURL: '#',
     imageURLs: ['/ticketless.png'],
   },
   {
@@ -62,8 +77,15 @@ export const projectsData: IProject[] = [
     description:
       'A Question Paper Generator that generates Question Papers for institutes and universities using AI.',
     techStack: ['React', 'NodeJS', 'Express', 'MongoDB'],
-    projectURL: 'http://generator.dot100.in',
+    projectURL: '#',
     imageURLs: ['/register.png', '/paper-gen.png', '/landing-2.png'],
+  },
+  {
+    name: 'Notion Replication',
+    description: 'This is Notion - Task Page clone with Drag and Drop functionality',
+    techStack: ['React', 'TailwindCSS'],
+    projectURL: 'https://notion-replication.vercel.app/',
+    imageURLs: ['/notion-1.png', '/notion-2.png'],
   },
   {
     name: 'Mac OS Clone',
@@ -72,20 +94,12 @@ export const projectsData: IProject[] = [
     projectURL: 'https://mac-os-clone-ten.vercel.app/',
     imageURLs: ['/mac-osx.png', '/mac-osx-2.png'],
   },
-
   {
     name: 'Netflix Landing Page',
     description: 'A clone of the Netflix landing page. It is a static website',
     techStack: ['React', 'TailwindCSS'],
     projectURL: 'https://netflix-clone-2022-chi.vercel.app/',
     imageURLs: ['/netflix.png', '/netflix-2.png'],
-  },
-  {
-    name: 'Coming Soon Page',
-    description: 'A coming soon landing page. It is a static website',
-    techStack: ['React', 'TailwindCSS'],
-    projectURL: 'https://scan-ai.vercel.app/',
-    imageURLs: ['/landing.png'],
   },
 ];
 
