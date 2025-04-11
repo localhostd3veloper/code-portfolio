@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Code Portfolio
+
+Hi everyone this is Gautam Anand, if you're reading this you are one of the few developers out there who care about proper documentation and luckily i'm one of them.
+
+## About Me
+
+I am a Full Stack Engineer working in a Cyber Security Startup Incubated in IIT Kanpur
+
+## Tech Stack
+
+- NextJS
+- ReactJS
+- TailwindCSS
+- TypeScript
+- Framer Motion
+- Zustand
+
+## Pre Requisites
+
+- [NodeJS](https://nodejs.org/en/download/)
+- [Bun](https://bun.sh/)
+- [A Code Editor](https://code.visualstudio.com/) ? xd
 
 ## Getting Started
 
-First, run the development server:
+- Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/localhostd3veloper/code-portfolio.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Install dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+bun install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Run the app
 
-## Learn More
+```bash
+bun run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+- Build the app
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+bun run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Dependencies List
 
-## Deploy on Vercel
+Also in: `package.json`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```json
+  "dependencies": {
+    "@vercel/speed-insights": "^1.2.0",
+    "motion": "^12.6.3",
+    "next": "15.2.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-resizable-panels": "^2.1.7",
+    "react-responsive-carousel": "^3.2.23",
+    "react-simple-typewriter": "^5.0.1",
+    "sharp": "^0.34.0",
+    "zustand": "^5.0.3"
+  }
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+[MIT License](https://github.com/localhostd3veloper/code-portfolio/blob/main/LICENSE)
