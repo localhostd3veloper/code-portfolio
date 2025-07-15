@@ -105,7 +105,15 @@ export const projectsData: IProject[] = [
 
 export const experienceItems = [
   {
-    title: 'Aug 2024 - Present',
+    title: 'June 2025 - Present',
+    cardTitle: 'Full Stack Engineer',
+    jobRole: '-',
+    cardSubtitle: 'Turium AI.',
+    cardDetailedText: `- Typing....`,
+    url: 'https://turium.ai',
+  },
+  {
+    title: 'Aug 2024 - June 2025',
     cardTitle: 'SDE 2',
     jobRole: 'Full Stack Lead',
     cardSubtitle: 'Treacle Tech.',
