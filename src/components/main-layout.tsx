@@ -14,10 +14,10 @@ import {
 import BottomBar from '@/components/bottom-bar';
 import EditorTabs from '@/components/editor-tabs';
 import Explorer from '@/components/explorer';
+import MobileFloatingBar from '@/components/floating-bar';
 import PersistentSidebar from '@/components/persistent-sidebar';
+import Terminal from '@/components/terminal';
 import TopBar from '@/components/top-bar';
-
-import Terminal from './terminal';
 
 export default function MainLayout({
   children,
@@ -77,6 +77,7 @@ export default function MainLayout({
       <PanelGroup autoSaveId={'tabs'} direction="horizontal" className="flex-1">
         <PersistentSidebar togglePanel={togglePanel} toggleSidebar={toggleSidebar} />
         <Panel
+          className="hidden md:block"
           defaultSize={isMobile ? 50 : 20}
           minSize={0}
           maxSize={100}
@@ -121,6 +122,7 @@ export default function MainLayout({
           </PanelGroup>
         </Panel>
       </PanelGroup>
+      <MobileFloatingBar />
       <BottomBar />
     </div>
   );

@@ -12,7 +12,7 @@ export default function PersistentSidebar({
   toggleSidebar: () => void;
 }) {
   return (
-    <div className="bg-sidebar border-border flex h-full w-14 flex-col gap-3 border-r py-2">
+    <div className="bg-sidebar border-border hidden h-full w-14 flex-col gap-3 border-r py-2 md:flex">
       <button
         className="hover:bg-token-hover hover:text-foreground flex cursor-pointer items-center justify-center border-l-2 border-blue-500 p-2 text-xl"
         title="Terminal"

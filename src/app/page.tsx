@@ -14,9 +14,6 @@ export default function WelcomePage() {
           ENGINEERING | CONVERSATIONAL AI | OPEN SOURCE | PHOTOGRAPHER | GUITARIST
         </FadeIn>
         <div className="mt-2 flex flex-col md:mt-6">
-          <p className="text-muted block text-sm md:hidden">
-            Please do visit the desktop version for a better experience
-          </p>
           <FadeIn delay={0.4} className="text-lg font-medium md:text-xl">
             Public Repositories
           </FadeIn>

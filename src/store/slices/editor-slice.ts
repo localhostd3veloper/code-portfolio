@@ -7,6 +7,7 @@ export interface EditorSlice {
   addEditor: (editor: SidebarLinksType) => void;
   removeEditor: (editor: SidebarLinksType) => void;
   setActiveEditor: (editor: SidebarLinksType) => void;
+  handleNewEditor: (editor: SidebarLinksType) => void;
 }
 
 export const createEditorSlice: StateCreator<EditorSlice> = (set) => ({
@@ -36,4 +37,21 @@ export const createEditorSlice: StateCreator<EditorSlice> = (set) => ({
         e.label === editor.label ? { ...e, isActive: true } : { ...e, isActive: false },
       ),
     })),
+  handleNewEditor: (editor) =>
+    set((state) => {
+      const isEditorOpen = state.activeEditors.some((e) => e.href === editor.href);
+      if (isEditorOpen) {
+        return {
+          activeEditors: state.activeEditors.map((e) =>
+            e.href === editor.href ? { ...e, isActive: true } : { ...e, isActive: false },
+          ),
+        };
+      }
+      return {
+        activeEditors: [
+          ...state.activeEditors.map((e) => ({ ...e, isActive: false })),
+          { ...editor, isActive: true },
+        ],
+      };
+    }),
 });

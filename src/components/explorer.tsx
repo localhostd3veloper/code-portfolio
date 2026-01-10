@@ -3,7 +3,6 @@
 import React from 'react';
 import { sidebarLinks } from '@/constants';
 import { useEditorStore } from '@/store';
-import { SidebarLinksType } from '@/types';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -17,13 +16,8 @@ import {
 
 export default function Explorer() {
   const pathname = usePathname();
-  const { activeEditors, addEditor } = useEditorStore();
-  const handleNewEditor = (editor: SidebarLinksType) => {
-    // check if the editor is already open
-    const isEditorOpen = activeEditors.some((e) => e.href === editor.href);
-    if (isEditorOpen) return;
-    addEditor(editor);
-  };
+  const { handleNewEditor } = useEditorStore();
+
   return (
     <motion.aside
       initial={{ opacity: 0 }}
