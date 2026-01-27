@@ -6,6 +6,43 @@ import Link from 'next/link';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
 export default function WorkExperiencePage() {
+  const formatDate = (
+    date: Date | null,
+    isActive: boolean,
+    dateType: 'start' | 'end',
+  ) => {
+    if (isActive && dateType === 'end') return 'Present';
+    const monthNames = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'June',
+      'July',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ];
+    if (!date) return 'Present';
+    return `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
+  };
+  const duration = (startDate: Date, endDate: Date) => {
+    let years = endDate.getFullYear() - startDate.getFullYear();
+    let months = endDate.getMonth() - startDate.getMonth();
+
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    const yearPart = years > 0 ? `${years} yr${years > 1 ? 's' : ''}` : '';
+    const monthPart = months > 0 ? `${months} mo${months > 1 ? 's' : ''}` : '';
+
+    return [yearPart, monthPart].filter(Boolean).join(' ') || '0 mos';
+  };
   return (
     <section className="mx-auto w-full max-w-4xl px-4 py-6">
       <h2 className="mb-6 text-xl font-semibold">Work Experience</h2>
@@ -20,7 +57,11 @@ export default function WorkExperiencePage() {
           >
             <span className="absolute top-2 -left-6 h-3 w-3 rounded-full bg-blue-500 shadow-sm" />
             <div className="bg-editor border-border rounded-lg border p-4">
-              <div className="text-muted mb-1 text-sm">{exp.title}</div>
+              <div className="text-muted mb-1 text-sm">
+                {formatDate(exp.startDate, exp.isActive, 'start')} -{' '}
+                {formatDate(exp.endDate, exp.isActive, 'end')} (
+                {duration(exp.startDate, exp.isActive ? new Date() : exp.endDate)})
+              </div>
               <div className="text-base font-semibold">{exp.cardTitle}</div>
               <div className="text-muted mb-2 text-sm">
                 {exp.jobRole} | {exp.cardSubtitle}
@@ -35,7 +76,7 @@ export default function WorkExperiencePage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-xs text-blue-400 hover:underline"
                 >
-                  Organization <FaExternalLinkAlt className="h-3 w-3" />
+                  Website <FaExternalLinkAlt className="h-3 w-3" />
                 </Link>
               )}
             </div>

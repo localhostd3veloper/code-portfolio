@@ -103,59 +103,83 @@ export const projectsData: IProject[] = [
   },
 ];
 
-export const experienceItems = [
+interface ExperienceItem {
+  startDate: Date;
+  endDate: Date;
+  cardTitle: string;
+  jobRole: string;
+  cardSubtitle: string;
+  cardDetailedText: string;
+  url: string;
+  isActive: boolean;
+}
+
+export const experienceItems: ExperienceItem[] = [
   {
-    title: 'June 2025 - Present',
-    cardTitle: 'Full Stack Engineer',
-    jobRole: '-',
-    cardSubtitle: 'Turium AI.',
-    cardDetailedText: `- Typing....`,
-    url: 'https://turium.ai',
+    startDate: new Date('2026-02-01'),
+    endDate: new Date('2030-06-30'),
+    isActive: true,
+    cardTitle: 'Lead Software Engineer',
+    cardSubtitle: 'Oraczen AI',
+    jobRole: 'Product Team',
+    cardDetailedText: `- Adding...`,
+    url: 'https://oraczen.ai',
   },
   {
-    title: 'Aug 2024 - June 2025',
-    cardTitle: 'SDE 2',
-    jobRole: 'Full Stack Lead',
-    cardSubtitle: 'Treacle Tech.',
+    startDate: new Date('2025-06-01'),
+    endDate: new Date('2026-01-31'),
+    cardTitle: 'Principal Engineer',
+    jobRole: 'Core Product Team',
+    cardSubtitle: 'Turium AI',
+    cardDetailedText: `- Led a cross-functional team of 7–8 developers to build a full-scale SaaS platform from scratch, integrating AI chat systems, real-time 1:1 and team calling, and event management features — achieving end-to-end delivery within aggressive timelines.\n- Collaborated directly with the founder and product team to conceptualize, design, and prioritize roadmap features, driving 25%+ growth in user engagement and retention through rapid prototyping and feedback loops.\n- Defined and enforced coding standards across all engineering teams, resulting in a more consistent user experience and a 30% reduction in code refactoring time.`,
+    url: 'https://turium.ai',
+    isActive: false,
+  },
+  {
+    startDate: new Date('2024-07-01'),
+    endDate: new Date('2025-05-31'),
+    cardTitle: 'SDE II',
+    jobRole: 'Founding Engineer',
+    cardSubtitle: 'Treacle Technologies',
     cardDetailedText: `- Led and contributed to full-stack development efforts alongside a team of 5+ developers, while setting up scalable development pipelines to streamline workflows.\n- Redesigned the database architecture, increasing scalability by 10x, supporting future growth and improving query performance.\n- Reduced CPU utilization on low-resource VMs from 90%+ to 15–20% by identifying performance bottlenecks and refactoring resource-heavy processes.\n- Migrated a monolithic architecture to microservices, resulting in 5x faster development and debugging capabilities.\n- Implemented automated CI/CD pipelines using Docker and custom shell scripts, enabling seamless deployment for 10+ unique client environments.\n- Optimized MongoDB aggregation pipelines, reducing query times from 10+ seconds to 700ms, dramatically improving API response times.`,
     url: 'https://treacletech.com',
+    isActive: false,
   },
   {
-    title: 'Apr 2024 - July 2024',
-    cardTitle: 'Software Engineer',
-    jobRole: 'Full Stack Lead',
+    startDate: new Date('2023-09-01'),
+    endDate: new Date('2024-08-31'),
+    cardTitle: 'Full Stack Lead',
+    jobRole: 'Founding Engineer',
     cardSubtitle: 'GENIE AI',
     cardDetailedText: `- Managed a distributed team of 10 developers across multiple time zones, establishing efficient development pipelines and assigning tasks to ensure continuous delivery.\n- Led agile sprints across 3 cross-functional teams, consistently delivering client demos on schedule and improving overall client satisfaction.\n- Refactored and optimized legacy codebases, removing ~2,000+ lines of redundant code per project to improve maintainability and future developer onboarding.\n- Conducted in-depth code reviews for an average of 10 GitHub pull requests daily, enforcing best practices and significantly improving team-wide code quality.`,
     url: 'https://albisai.com/',
+    isActive: false,
   },
   {
-    title: 'Oct 2023 - Mar 2024',
-    cardTitle: 'Full Stack Engineer (Freelance)',
-    jobRole: 'Founding Team Member',
-    cardSubtitle: 'TestNTrack',
-    cardDetailedText: `- Designed and implemented a comprehensive admin dashboard for educational institutes, reducing manual administrative tasks by 40% through process automation.\n- Developed and secured APIs for encrypted OTP-based user authentication, increasing login security by 30% and enhancing user trust.\n- Integrated robust modules for exam management, student records, and performance tracking, streamlining operations and significantly improving data accessibility for staff.`,
-    url: 'https://www.testntrack.com/',
-  },
-  {
-    title: 'Oct 2022 - Jan 2023',
-    cardTitle: 'Frontend Engineer Intern',
-    jobRole: 'Product Development Team',
-    cardSubtitle: 'Treacle Tech.',
+    startDate: new Date('2022-10-01'),
+    endDate: new Date('2022-12-31'),
+    cardTitle: 'Frontend Intern',
+    jobRole: 'Frontend Developer',
+    cardSubtitle: 'Treacle Technologies',
     cardDetailedText: `- Translated complex Figma designs into fully responsive and interactive React-based user interfaces, achieving a 100% match to design specifications.\n- Optimized UI components for performance, reducing load times by 20% and enhancing the overall user experience.\n- Gained hands-on experience with cyber-attack simulations (SQL injection, XSS, DoS), strengthening understanding of secure coding practices and improving system resilience.`,
     url: 'https://treacletech.com',
+    isActive: false,
   },
   {
-    title: 'Feb 2022 - Jul 2022',
-    cardTitle: 'Full Stack Developer Intern',
-    jobRole: 'Founding Team Member',
-    cardSubtitle: 'Botosynthesis®',
-    cardDetailedText: `- Developed and deployed 5 full-stack applications across 3 distinct industries, resulting in improved system performance and increased user engagement.\n- Designed and launched 3 conversational APIs, enhancing the platform experience for 100+ active users through personalized, real-time interactions.\n- Managed multiple projects concurrently and contributed to the creation of a structured Software Development Life Cycle (SDLC) for a client, collaborating closely with a tech team of 8+ engineers.\n- Led and mentored a team of 6 interns, guiding the successful development of 20+ chatbots that automated over 200 weekly customer interactions, significantly boosting engagement and operational efficiency.`,
-    url: 'https://botosynthesis.ai/',
+    startDate: new Date('2022-07-01'),
+    endDate: new Date('2022-08-31'),
+    cardTitle: 'SDE Intern',
+    jobRole: 'Core Product Team',
+    cardSubtitle: 'Listnr, Inc.',
+    cardDetailedText: `- Worked closely with the CTO and the CEO to develop/write features on the platform listnr.fm\n- Replicating complex UI's from the wireframes and parallelly writing logic for the same\n- Improving the lighthouse score by reducing the overall bundle size of the web-pack and by using the best practices.\n- Co-authored pull requests on GitHub with other engineers on the team`,
+    url: 'https://listnr.fm',
+    isActive: false,
   },
   {
-    title: 'Oct 2020 - Jan 2022',
+    startDate: new Date('2020-10-01'),
+    endDate: new Date('2022-06-31'),
     cardTitle: 'Trainee Intern & Full Stack Web Developer Intern',
-    jobRole: 'Founding Team Member',
+    jobRole: 'Founding Engineer',
     cardSubtitle: 'Botosynthesis®',
     cardDetailedText: `Developed fully-fledged Full-Stack Applications collaborating with other
       engineers for various companies using MERN.
@@ -163,6 +187,7 @@ export const experienceItems = [
       role at the the backend of a few conventional AI platforms.
       Working on projects and simultaneously creating SDLC for the same`,
     url: 'https://botosynthesis.ai/',
+    isActive: false,
   },
 ];
 export const blogs = [

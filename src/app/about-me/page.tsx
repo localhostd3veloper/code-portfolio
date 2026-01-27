@@ -11,7 +11,7 @@ export default function AboutMePage() {
     <FadeIn className="flex flex-col items-center justify-center gap-4 p-4 md:p-12 lg:p-20">
       <div className="flex flex-col items-center gap-6">
         <Image
-          src="/profile.jpg"
+          src="/profile.png"
           alt="Gautam Anand"
           width={300}
           height={300}
