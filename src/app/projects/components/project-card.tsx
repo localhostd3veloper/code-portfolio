@@ -16,11 +16,11 @@ export default function ProjectCard({ project }: { project: IProject }) {
       className="border-border flex flex-col gap-3 border p-4"
     >
       <Carousel
-        showThumbs={false}
+        showThumbs
         showStatus={false}
         showIndicators={false}
         showArrows={true}
-        stopOnHover={false}
+        stopOnHover
         infiniteLoop
         autoPlay
         interval={2500}
@@ -30,8 +30,8 @@ export default function ProjectCard({ project }: { project: IProject }) {
             <Image
               src={image}
               quality={100}
-              className="w-full"
-              height={200}
+              className="aspect-video w-full object-cover"
+              height={500}
               width={400}
               alt={`${index} image of ${project.name}`}
             />

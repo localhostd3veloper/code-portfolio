@@ -42,20 +42,35 @@ export const typeWriterText = [
 
 export const projectsData: IProject[] = [
   {
+    name: 'Breeze',
+    description:
+      'Breeze is a full-stack AI chat application built with Next.js and FastAPI. It supports real-time LLM streaming via Ollama, conversation persistence in MongoDB, and a voice mode with live speech-to-text, text-to-speech, and a Rive-animated persona. Summarization uses OpenAI, with Langfuse observability and Tavily-powered web search.',
+    techStack: ['AI Elements', 'Next.JS', 'React', 'TailwindCSS', 'Zustand', 'More..'],
+    projectURL: 'https://breeze.localhostdeveloper.com',
+    imageURLs: ['/breeze/1.png', '/breeze/2.png', '/breeze/3.png', '/breeze/4.png'],
+  },
+  {
+    name: 'Faultline.ai',
+    description:
+      'Faultline AI is an AI-powered production-readiness review tool. It accepts engineering artifacts (like API specs), runs heuristic analysis against them, and uses an LLM agent to evaluate findings by severity and confidence — helping teams identify issues before shipping to production..',
+    techStack: ['shadcn/ui', 'Next.JS', 'React', 'TailwindCSS', 'Zustand', 'More..'],
+    projectURL: 'https://faultline-ai-six.vercel.app/',
+    imageURLs: [
+      '/faultline/1.png',
+      '/faultline/2.png',
+      '/faultline/3.png',
+      '/faultline/4.png',
+    ],
+  },
+  {
     name: 'Code Portfolio',
-    description: 'This very own project, ',
+    description:
+      "A personal developer portfolio built with Next.js, React, and TailwindCSS, showcasing Gautam Anand's projects, work experience, and technical blogs. Features a typewriter hero, project gallery with image carousels, a work experience timeline, and links to social profiles — all self-hosted and open-source",
     techStack: ['Next.JS', 'React', 'TailwindCSS', 'Zustand', 'More..'],
     projectURL: '#',
     imageURLs: ['/portfolio-1.png', '/portfolio-2.png', '/portfolio-3.png'],
   },
-  {
-    name: 'Drift UI (Under Construction)',
-    description:
-      'This is a component library for TailwindCSS and GSAP, this is a work in progress and will be completly open sourced available on npmjs',
-    techStack: ['Next.JS', 'React', 'TailwindCSS', 'Zustand', 'More..'],
-    projectURL: '#',
-    imageURLs: ['/drift-ui-1.png', '/drift-ui-2.png', '/drift-ui-3.png'],
-  },
+
   {
     name: 'Institute Dashboard',
     description:
