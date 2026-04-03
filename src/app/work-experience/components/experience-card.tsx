@@ -1,0 +1,87 @@
+'use client';
+
+import { ExperienceItem } from '@/constants/self';
+import { motion } from 'motion/react';
+import Link from 'next/link';
+import { FaExternalLinkAlt } from 'react-icons/fa';
+
+export default function ExperienceCard({
+  exp,
+  idx,
+}: {
+  exp: ExperienceItem;
+  idx: number;
+}) {
+  const formatDate = (
+    date: Date | null,
+    isActive: boolean,
+    dateType: 'start' | 'end',
+  ) => {
+    if (isActive && dateType === 'end') return 'Present';
+    const monthNames = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'June',
+      'July',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ];
+    if (!date) return 'Present';
+    return `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
+  };
+  const duration = (startDate: Date, endDate: Date) => {
+    let years = endDate.getFullYear() - startDate.getFullYear();
+    let months = endDate.getMonth() - startDate.getMonth();
+
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    const yearPart = years > 0 ? `${years} yr${years > 1 ? 's' : ''}` : '';
+    const monthPart = months > 0 ? `${months} mo${months > 1 ? 's' : ''}` : '';
+
+    return [yearPart, monthPart].filter(Boolean).join(' ') || '0 mos';
+  };
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: idx * 0.3, duration: 0.5 }}
+      key={idx}
+      className="relative"
+    >
+      <span className="absolute top-2 -left-6 h-3 w-3 rounded-full bg-blue-500 shadow-sm" />
+      <div className="bg-editor border-border rounded-lg border p-4">
+        <div className="text-muted mb-1 text-sm">
+          {formatDate(exp.startDate, exp.isActive, 'start')} -{' '}
+          {formatDate(exp.endDate, exp.isActive, 'end')} (
+          {duration(exp.startDate, exp.isActive ? new Date() : exp.endDate)})
+        </div>
+        <div className="text-base font-semibold">{exp.cardTitle}</div>
+        <div className="text-muted mb-2 text-sm">
+          {exp.jobRole} | {exp.cardSubtitle}
+        </div>
+        <p className="text-muted-foreground mb-2 text-sm whitespace-pre-line">
+          {exp.cardDetailedText}
+        </p>
+        {exp.url && (
+          <Link
+            href={exp.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-xs text-blue-400 hover:underline"
+          >
+            Website <FaExternalLinkAlt className="h-3 w-3" />
+          </Link>
+        )}
+      </div>
+    </motion.div>
+  );
+}

@@ -103,7 +103,7 @@ export const projectsData: IProject[] = [
   },
 ];
 
-interface ExperienceItem {
+export interface ExperienceItem {
   startDate: Date;
   endDate: Date;
   cardTitle: string;
