@@ -108,7 +108,6 @@ Here are some of the core dependencies used in this project:
 
 📁 Also available in `package.json`.
 
-
 ---
 
 ## 🪪 License
