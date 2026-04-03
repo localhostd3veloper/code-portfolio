@@ -16,7 +16,7 @@ export const socialMediaLinks = [
   },
   {
     name: 'Instagram',
-    link: 'https://www.instagram.com/the.vscode.guy/',
+    link: 'https://www.instagram.com/gautam.anand16/',
     icon: BsInstagram,
   },
   {

@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { sidebarLinks } from '@/constants';
 import { useEditorStore } from '@/store';
 import { motion } from 'motion/react';

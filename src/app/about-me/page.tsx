@@ -1,4 +1,3 @@
-import React from 'react';
 import { socialMediaLinks } from '@/constants/self';
 import Image from 'next/image';
 

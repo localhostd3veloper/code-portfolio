@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { socialMediaLinks } from '@/constants/self';
 import { motion } from 'motion/react';
 

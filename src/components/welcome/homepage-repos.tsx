@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { homepageRepos } from '@/constants/self';
 import { motion } from 'motion/react';
 import { VscRepo } from 'react-icons/vsc';

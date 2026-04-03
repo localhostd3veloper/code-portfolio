@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { sidebarIcons } from '@/constants';
 import { VscFiles, VscTerminal } from 'react-icons/vsc';
 
