@@ -1,5 +1,6 @@
 'use client';
 
+import { fadeUp } from '@/constants/motion';
 import { motion } from 'motion/react';
 
 export default function FadeIn({
@@ -12,12 +13,7 @@ export default function FadeIn({
   delay?: number;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, ease: 'easeInOut', delay: delay }}
-      className={className}
-    >
+    <motion.div {...fadeUp(delay)} className={className}>
       {children}
     </motion.div>
   );

@@ -16,7 +16,7 @@ export const socialMediaLinks = [
   },
   {
     name: 'Instagram',
-    link: 'https://www.instagram.com/gautam.anand16/',
+    link: 'https://www.instagram.com/aree.gautammm',
     icon: BsInstagram,
   },
   {
@@ -52,7 +52,7 @@ export const projectsData: IProject[] = [
   {
     name: 'Faultline.ai',
     description:
-      'Faultline AI is an AI-powered production-readiness review tool. It accepts engineering artifacts (like API specs), runs heuristic analysis against them, and uses an LLM agent to evaluate findings by severity and confidence — helping teams identify issues before shipping to production..',
+      'Faultline AI is an AI-powered production-readiness review tool. It accepts engineering artifacts (like API specs), runs heuristic analysis against them, and uses an LLM agent to evaluate findings by severity and confidence, helping teams identify issues before shipping to production.',
     techStack: ['shadcn/ui', 'Next.JS', 'React', 'TailwindCSS', 'Zustand', 'More..'],
     projectURL: 'https://faultline-ai-six.vercel.app/',
     imageURLs: [
@@ -65,7 +65,7 @@ export const projectsData: IProject[] = [
   {
     name: 'Code Portfolio',
     description:
-      "A personal developer portfolio built with Next.js, React, and TailwindCSS, showcasing Gautam Anand's projects, work experience, and technical blogs. Features a typewriter hero, project gallery with image carousels, a work experience timeline, and links to social profiles — all self-hosted and open-source",
+      "A personal developer portfolio built with Next.js, React, and TailwindCSS, showcasing Gautam Anand's projects, work experience, and technical blogs. Features a typewriter hero, project gallery with image carousels, a work experience timeline, and links to social profiles, all self-hosted and open-source",
     techStack: ['Next.JS', 'React', 'TailwindCSS', 'Zustand', 'More..'],
     projectURL: '#',
     imageURLs: ['/portfolio-1.png', '/portfolio-2.png', '/portfolio-3.png'],
@@ -146,7 +146,7 @@ export const experienceItems: ExperienceItem[] = [
     cardTitle: 'Principal Engineer',
     jobRole: 'Core Product Team',
     cardSubtitle: 'Turium AI',
-    cardDetailedText: `- Led a cross-functional team of 7–8 developers to build a full-scale SaaS platform from scratch, integrating AI chat systems, real-time 1:1 and team calling, and event management features — achieving end-to-end delivery within aggressive timelines.\n- Collaborated directly with the founder and product team to conceptualize, design, and prioritize roadmap features, driving 25%+ growth in user engagement and retention through rapid prototyping and feedback loops.\n- Defined and enforced coding standards across all engineering teams, resulting in a more consistent user experience and a 30% reduction in code refactoring time.`,
+    cardDetailedText: `- Led a cross-functional team of 7-8 developers to build a full-scale SaaS platform from scratch, integrating AI chat systems, real-time 1:1 and team calling, and event management features, achieving end-to-end delivery within aggressive timelines.\n- Collaborated directly with the founder and product team to conceptualize, design, and prioritize roadmap features, driving 25%+ growth in user engagement and retention through rapid prototyping and feedback loops.\n- Defined and enforced coding standards across all engineering teams, resulting in a more consistent user experience and a 30% reduction in code refactoring time.`,
     url: 'https://turium.ai',
     isActive: false,
   },
@@ -156,7 +156,7 @@ export const experienceItems: ExperienceItem[] = [
     cardTitle: 'SDE II',
     jobRole: 'Founding Engineer',
     cardSubtitle: 'Treacle Technologies',
-    cardDetailedText: `- Led and contributed to full-stack development efforts alongside a team of 5+ developers, while setting up scalable development pipelines to streamline workflows.\n- Redesigned the database architecture, increasing scalability by 10x, supporting future growth and improving query performance.\n- Reduced CPU utilization on low-resource VMs from 90%+ to 15–20% by identifying performance bottlenecks and refactoring resource-heavy processes.\n- Migrated a monolithic architecture to microservices, resulting in 5x faster development and debugging capabilities.\n- Implemented automated CI/CD pipelines using Docker and custom shell scripts, enabling seamless deployment for 10+ unique client environments.\n- Optimized MongoDB aggregation pipelines, reducing query times from 10+ seconds to 700ms, dramatically improving API response times.`,
+    cardDetailedText: `- Led and contributed to full-stack development efforts alongside a team of 5+ developers, while setting up scalable development pipelines to streamline workflows.\n- Redesigned the database architecture, increasing scalability by 10x, supporting future growth and improving query performance.\n- Reduced CPU utilization on low-resource VMs from 90%+ to 15-20% by identifying performance bottlenecks and refactoring resource-heavy processes.\n- Migrated a monolithic architecture to microservices, resulting in 5x faster development and debugging capabilities.\n- Implemented automated CI/CD pipelines using Docker and custom shell scripts, enabling seamless deployment for 10+ unique client environments.\n- Optimized MongoDB aggregation pipelines, reducing query times from 10+ seconds to 700ms, dramatically improving API response times.`,
     url: 'https://treacletech.com',
     isActive: false,
   },

@@ -61,7 +61,7 @@ export default function Terminal({ collapsePanel }: { collapsePanel: () => void 
         className="mt-2 ml-5 flex-1 space-y-1 overflow-y-scroll scroll-smooth"
       >
         <div className="">
-          <span className="text-purple-500"> ▲ Next.js 15.2.1</span> (Turbopack)
+          <span className="text-purple-500"> ▲ Next.js 16.2.10</span> (Turbopack)
         </div>
         <div className="">
           - Local: <span className="text-blue-400">http://localhost:3000</span>

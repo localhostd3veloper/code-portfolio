@@ -1,6 +1,7 @@
 'use client';
 
 import { sidebarLinks } from '@/constants';
+import { fade, fadeLeft } from '@/constants/motion';
 import { useEditorStore } from '@/store';
 import { motion } from 'motion/react';
 import Link from 'next/link';
@@ -18,11 +19,7 @@ export default function Explorer() {
   const { handleNewEditor } = useEditorStore();
 
   return (
-    <motion.aside
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="bg-sidebar flex h-full w-full flex-col p-2"
-    >
+    <motion.aside {...fade()} className="bg-sidebar flex h-full w-full flex-col p-2">
       <div className="mb-2 flex items-center justify-between px-2">
         <h3 className="text-muted text-sm font-light">EXPLORER</h3>
         <VscEllipsis />
@@ -44,20 +41,21 @@ export default function Explorer() {
       </div>
 
       <nav className="mt-2 flex flex-col gap-1">
-        {sidebarLinks.map(({ label, icon: Icon, color, href }) => (
-          <Link
-            href={href}
-            key={label}
-            className={`hover:bg-editor/80 flex w-full items-center space-x-2 overflow-hidden px-3 py-1 text-sm duration-300 ${
-              pathname === href && 'bg-editor'
-            }`}
-            onClick={() => handleNewEditor({ label, icon: Icon, color, href })}
-          >
-            <Icon style={{ color }} className="min-h-4 min-w-4" />
-            <span className="overflow-hidden text-ellipsis whitespace-nowrap">
-              {label}
-            </span>
-          </Link>
+        {sidebarLinks.map(({ label, icon: Icon, color, href }, index) => (
+          <motion.div key={label} {...fadeLeft(index * 0.03)}>
+            <Link
+              href={href}
+              className={`hover:bg-editor/80 flex w-full items-center space-x-2 overflow-hidden px-3 py-1 text-sm transition-colors duration-150 ${
+                pathname === href && 'bg-editor'
+              }`}
+              onClick={() => handleNewEditor({ label, icon: Icon, color, href })}
+            >
+              <Icon style={{ color }} className="min-h-4 min-w-4" />
+              <span className="overflow-hidden text-ellipsis whitespace-nowrap">
+                {label}
+              </span>
+            </Link>
+          </motion.div>
         ))}
       </nav>
     </motion.aside>

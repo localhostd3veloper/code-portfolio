@@ -1,61 +1,82 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { topBarMenus } from '@/constants';
+import { popIn } from '@/constants/motion';
+import { AnimatePresence, motion } from 'motion/react';
+
+type Menu = (typeof topBarMenus)[number];
 
 export default function MenuItems() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  const handleClick = (label: string) => {
-    if (openMenu === label) setOpenMenu(null);
-    else setOpenMenu(label);
-  };
+  const menuBarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setOpenMenu(null);
-      }
+    if (!openMenu) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuBarRef.current?.contains(event.target as Node)) return;
+      setOpenMenu(null);
+    };
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      setOpenMenu(null);
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+    document.addEventListener('keydown', handleEscape);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [openMenu]);
 
-  return topBarMenus.map((menu) => (
-    <div key={menu.label} className="relative text-sm" ref={dropdownRef}>
-      <button
-        onClick={() => handleClick(menu.label)}
-        className={`hover:bg-border hidden cursor-pointer rounded px-2 py-0.5 md:block ${
-          openMenu === menu.label ? 'bg-[#3c3c3c]' : ''
-        }`}
-      >
-        {menu.label}
-      </button>
-
-      {openMenu === menu.label && (
-        <div className="bg-editor border-border absolute top-full left-0 mt-2 min-w-[200px] rounded border text-sm shadow">
-          {menu.items.map((item, index) =>
-            item.separator ? (
-              <div
-                key={`separator-${index}-${item.label}`}
-                className="border-border my-1 border-t"
-              />
-            ) : (
-              <div
-                key={`item-${index}-${item.label}`}
-                className="hover:bg-border flex basis-full cursor-pointer items-center justify-between px-3 py-1"
-              >
-                <span>{item.label}</span>
-                {item.shortcut && (
-                  <span className="text-muted text-xs">{item.shortcut}</span>
-                )}
-              </div>
-            ),
-          )}
+  return (
+    <div ref={menuBarRef} className="flex items-center">
+      {topBarMenus.map((menu) => (
+        <div key={menu.label} className="relative text-sm">
+          <button
+            onClick={() => setOpenMenu(openMenu === menu.label ? null : menu.label)}
+            onMouseEnter={() => openMenu && setOpenMenu(menu.label)}
+            className={`hover:bg-border hidden cursor-pointer rounded px-2 py-0.5 md:block ${
+              openMenu === menu.label ? 'bg-border' : ''
+            }`}
+          >
+            {menu.label}
+          </button>
+          <AnimatePresence>
+            {openMenu === menu.label && (
+              <MenuDropdown menu={menu} onSelect={() => setOpenMenu(null)} />
+            )}
+          </AnimatePresence>
         </div>
-      )}
+      ))}
     </div>
-  ));
+  );
+}
+
+function MenuDropdown({ menu, onSelect }: { menu: Menu; onSelect: () => void }) {
+  return (
+    <motion.div
+      {...popIn}
+      style={{ originY: 0 }}
+      className="bg-editor border-border absolute top-full left-0 z-20 mt-1 min-w-[220px] rounded-md border py-1 text-sm shadow-lg"
+    >
+      {menu.items.map((item, index) =>
+        item.separator ? (
+          <div key={`separator-${index}`} className="border-border my-1 border-t" />
+        ) : (
+          <button
+            key={`item-${index}-${item.label}`}
+            onClick={onSelect}
+            className="hover:bg-list-active hover:text-list-active-fg flex w-full cursor-pointer items-center justify-between px-3 py-1"
+          >
+            <span>{item.label}</span>
+            {item.shortcut && <span className="text-muted text-xs">{item.shortcut}</span>}
+          </button>
+        ),
+      )}
+    </motion.div>
+  );
 }

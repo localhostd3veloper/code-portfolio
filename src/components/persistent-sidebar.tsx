@@ -1,6 +1,7 @@
 'use client';
 
 import { sidebarIcons } from '@/constants';
+import { useEditorStore } from '@/store';
 import { VscFiles, VscTerminal } from 'react-icons/vsc';
 
 export default function PersistentSidebar({
@@ -10,6 +11,8 @@ export default function PersistentSidebar({
   togglePanel: () => void;
   toggleSidebar: () => void;
 }) {
+  const { setThemePickerOpen } = useEditorStore();
+
   return (
     <div className="bg-sidebar border-border hidden h-full w-14 flex-col gap-3 border-r py-2 md:flex">
       <button
@@ -23,7 +26,8 @@ export default function PersistentSidebar({
         <button
           key={id}
           className={`hover:bg-token-hover text-muted hover:text-foreground flex cursor-pointer items-center justify-center p-2 text-xl`}
-          title={label}
+          title={id === 'settings' ? 'Color Theme (Ctrl+K T)' : label}
+          onClick={id === 'settings' ? () => setThemePickerOpen(true) : undefined}
         >
           <Icon className="h-6 w-6" />
         </button>

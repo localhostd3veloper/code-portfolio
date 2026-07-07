@@ -1,7 +1,7 @@
 # 🚀 Code Portfolio
 
 Hey everyone 👋 I'm **Gautam Anand**.  
-If you're reading this, you're one of the few developers who care about _proper documentation_ — and guess what? I'm one of them too 💻✨
+If you're reading this, you're one of the few developers who care about _proper documentation_, and guess what? I'm one of them too 💻✨
 
 ---
 
@@ -37,7 +37,7 @@ Some of the tools I love and use daily:
 Want to contribute? Don't worry, I'm always open to new ideas and suggestions.
 
 - [ ] Add more animations, (framer motion)
-- [ ] Themes Settings
+- [x] Themes Settings: 10 color themes (5 dark, 5 light) via the settings gear or `Ctrl+K T`
 - [ ] Add Shortcuts Page inside Settings
 - [ ] Suggestions?
 
@@ -51,7 +51,7 @@ Make sure you’ve got these installed before you run the project:
 
 - 📦 [**Node.js**](https://nodejs.org/en/download/)
 - ⚡ [**Bun**](https://bun.sh/)
-- 🧑‍💻 [**Code Editor (VSCode?)**](https://code.visualstudio.com/) — _well... obviously 😄_
+- 🧑‍💻 [**Code Editor (VSCode?)**](https://code.visualstudio.com/) _well... obviously 😄_
 
 ---
 

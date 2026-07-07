@@ -1,5 +1,6 @@
 'use client';
 
+import { fadeUp, STAGGER } from '@/constants/motion';
 import { socialMediaLinks } from '@/constants/self';
 import { motion } from 'motion/react';
 
@@ -9,15 +10,15 @@ export default function ContactMePage() {
       <h1 className="mb-6 text-2xl font-semibold">Contact Me</h1>
       {socialMediaLinks.map(({ icon: Icon, link, name }, idx) => (
         <motion.a
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: idx * 0.1, duration: 0.5 }}
+          {...fadeUp(idx * STAGGER)}
           href={link}
           key={link}
-          className="border-border hover:bg-token-comment flex items-center gap-2 border p-4 duration-300"
+          className="border-border hover:bg-token-hover flex items-center gap-2 border p-4 transition-colors duration-150 hover:border-blue-500"
         >
-          <Icon className="h-6 w-6" />
-          {name}
+          <>
+            <Icon className="h-6 w-6" />
+            {name}
+          </>
         </motion.a>
       ))}
     </div>
