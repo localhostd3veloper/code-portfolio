@@ -1,7 +1,7 @@
 'use client';
 
 import { sidebarLinks } from '@/constants';
-import { slideUp } from '@/constants/motion';
+import { fadeIn, SPRING } from '@/constants/motion';
 import { useEditorStore } from '@/store';
 import { motion } from 'motion/react';
 import Link from 'next/link';
@@ -14,7 +14,7 @@ export default function MobileFloatingBar() {
 
   return (
     <motion.div
-      {...slideUp}
+      variants={fadeIn}
       className="fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 gap-3 rounded-full border border-white/20 bg-white/10 p-3 shadow-lg shadow-black/20 backdrop-blur-md backdrop-saturate-150 md:hidden dark:bg-black/20"
     >
       {sidebarLinks.map(({ icon: Icon, color, href, label }) => (
@@ -22,27 +22,37 @@ export default function MobileFloatingBar() {
           key={label}
           href={href}
           onClick={() => handleNewEditor({ label, icon: Icon, color, href })}
-          className={`flex items-center justify-center transition-all duration-200 ease-out ${
-            pathname === href ? 'mx-2 scale-125' : 'scale-100 hover:scale-105'
-          } `}
+          className="relative flex items-center justify-center p-1.5"
         >
-          <Icon className="h-5 w-5" style={{ color }} />
+          {pathname === href && (
+            <motion.div
+              layoutId="active-nav-pill"
+              style={{ borderRadius: 9999 }}
+              className="absolute inset-0 bg-white/20"
+              transition={SPRING.indicator}
+            />
+          )}
+          <motion.div whileTap={{ scale: 0.9 }} className="relative">
+            <Icon className="h-5 w-5" style={{ color }} />
+          </motion.div>
         </Link>
       ))}
-      <button
+      <motion.button
         aria-label="Search"
         onClick={() => setSearchOpen(true)}
-        className="flex items-center justify-center transition-all duration-200 ease-out hover:scale-105"
+        whileTap={{ scale: 0.9 }}
+        className="flex items-center justify-center"
       >
         <VscSearch className="text-foreground h-5 w-5" />
-      </button>
-      <button
+      </motion.button>
+      <motion.button
         aria-label="Change color theme"
         onClick={() => setThemePickerOpen(true)}
-        className="flex items-center justify-center transition-all duration-200 ease-out hover:scale-105"
+        whileTap={{ scale: 0.9 }}
+        className="flex items-center justify-center"
       >
         <VscColorMode className="text-foreground h-5 w-5" />
-      </button>
+      </motion.button>
     </motion.div>
   );
 }

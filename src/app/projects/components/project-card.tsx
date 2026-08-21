@@ -1,6 +1,6 @@
 'use client';
 
-import { fadeUp, STAGGER } from '@/constants/motion';
+import { fadeRise } from '@/constants/motion';
 import { projectAnchorId } from '@/constants/search';
 import { IProject } from '@/types';
 import { motion } from 'motion/react';
@@ -9,67 +9,59 @@ import { Carousel } from 'react-responsive-carousel';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-export default function ProjectCard({
-  project,
-  idx,
-}: {
-  project: IProject;
-  idx: number;
-}) {
+export default function ProjectCard({ project }: { project: IProject }) {
   return (
     <motion.div
-      {...fadeUp(idx * STAGGER)}
+      variants={fadeRise}
       id={projectAnchorId(project.name)}
       className="border-border flex scroll-mt-4 flex-col gap-3 border p-4"
     >
-      <>
-        <Carousel
-          showThumbs
-          showStatus={false}
-          showIndicators={false}
-          showArrows={true}
-          stopOnHover
-          infiniteLoop
-          autoPlay
-          interval={2500}
+      <Carousel
+        showThumbs
+        showStatus={false}
+        showIndicators={false}
+        showArrows={true}
+        stopOnHover
+        infiniteLoop
+        autoPlay
+        interval={2500}
+      >
+        {project.imageURLs.map((image, index) => (
+          <div key={index}>
+            <Image
+              src={image}
+              quality={100}
+              className="aspect-video w-full object-cover"
+              height={500}
+              width={400}
+              alt={`${index} image of ${project.name}`}
+            />
+          </div>
+        ))}
+      </Carousel>
+      <h3 className="mt-3 text-lg font-semibold">{project.name}</h3>
+      <p className="text-muted">
+        {project.description}...{' '}
+        <a
+          href={project.projectURL}
+          rel="noopener noreferrer"
+          target="_blank"
+          className="text-right text-sm text-blue-500 hover:underline"
         >
-          {project.imageURLs.map((image, index) => (
-            <div key={index}>
-              <Image
-                src={image}
-                quality={100}
-                className="aspect-video w-full object-cover"
-                height={500}
-                width={400}
-                alt={`${index} image of ${project.name}`}
-              />
-            </div>
-          ))}
-        </Carousel>
-        <h3 className="mt-3 text-lg font-semibold">{project.name}</h3>
-        <p className="text-muted">
-          {project.description}...{' '}
-          <a
-            href={project.projectURL}
-            rel="noopener noreferrer"
-            target="_blank"
-            className="text-right text-sm text-blue-500 hover:underline"
+          Learn More
+        </a>
+      </p>
+      <div className="flex flex-wrap gap-1">
+        Tech Stack:{' '}
+        {project.techStack.map((stack) => (
+          <span
+            key={stack}
+            className="bg-sidebar border-border border px-3 py-0.5 text-sm"
           >
-            Learn More
-          </a>
-        </p>
-        <div className="flex flex-wrap gap-1">
-          Tech Stack:{' '}
-          {project.techStack.map((stack) => (
-            <span
-              key={stack}
-              className="bg-sidebar border-border border px-3 py-0.5 text-sm"
-            >
-              {stack}
-            </span>
-          ))}
-        </div>
-      </>
+            {stack}
+          </span>
+        ))}
+      </div>
     </motion.div>
   );
 }

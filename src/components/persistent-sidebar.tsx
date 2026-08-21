@@ -1,7 +1,9 @@
 'use client';
 
 import { sidebarIcons } from '@/constants';
+import { fadeIn } from '@/constants/motion';
 import { useEditorStore } from '@/store';
+import { motion } from 'motion/react';
 import { VscFiles, VscTerminal } from 'react-icons/vsc';
 
 export default function PersistentSidebar({
@@ -36,32 +38,38 @@ export default function PersistentSidebar({
   };
 
   return (
-    <div className="bg-background hidden h-full w-14 flex-col gap-3 py-2 md:flex">
-      <button
+    <motion.div
+      variants={fadeIn}
+      className="bg-background hidden h-full w-14 flex-col gap-3 py-2 md:flex"
+    >
+      <motion.button
+        whileTap={{ scale: 0.9 }}
         className="hover:bg-token-hover hover:text-foreground flex cursor-pointer items-center justify-center border-l-2 border-blue-500 p-2 text-xl"
         title="Explorer"
         onClick={toggleSidebar}
       >
         <VscFiles className="h-6 w-6" />
-      </button>
+      </motion.button>
       {sidebarIcons.map(({ id, icon: Icon, label }) => (
-        <button
+        <motion.button
           key={id}
-          className={`hover:bg-token-hover text-muted hover:text-foreground flex cursor-pointer items-center justify-center p-2 text-xl`}
+          whileTap={{ scale: 0.9 }}
+          className="hover:bg-token-hover text-muted hover:text-foreground flex cursor-pointer items-center justify-center p-2 text-xl"
           title={iconTitle(id, label)}
           onClick={() => handleIconClick(id)}
         >
           <Icon className="h-6 w-6" />
-        </button>
+        </motion.button>
       ))}
 
-      <button
+      <motion.button
+        whileTap={{ scale: 0.9 }}
         className="hover:bg-token-hover hover:text-foreground flex cursor-pointer items-center justify-center p-2 text-xl text-amber-600"
         title="Terminal"
         onClick={togglePanel}
       >
         <VscTerminal className="h-6 w-6" />
-      </button>
-    </div>
+      </motion.button>
+    </motion.div>
   );
 }

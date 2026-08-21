@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { topBarMenus } from '@/constants';
-import { popIn } from '@/constants/motion';
+import { dropdownPanel } from '@/constants/motion';
 import { AnimatePresence, motion } from 'motion/react';
 
 type Menu = (typeof topBarMenus)[number];
@@ -59,7 +59,7 @@ export default function MenuItems() {
 function MenuDropdown({ menu, onSelect }: { menu: Menu; onSelect: () => void }) {
   return (
     <motion.div
-      {...popIn}
+      {...dropdownPanel}
       style={{ originY: 0 }}
       className="bg-editor border-border absolute top-full left-0 z-20 mt-1 min-w-[220px] border p-1 text-sm shadow-md"
     >

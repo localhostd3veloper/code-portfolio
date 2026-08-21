@@ -1,6 +1,9 @@
-const MAX_ATTEMPTS = 30;
+const TIMEOUT_MS = 1000;
 
-export const scrollToAnchor = (anchorId: string, attempt = 0) => {
+export const scrollToAnchor = (
+  anchorId: string,
+  deadline = performance.now() + TIMEOUT_MS,
+) => {
   const target = document.getElementById(anchorId);
 
   if (target) {
@@ -8,7 +11,7 @@ export const scrollToAnchor = (anchorId: string, attempt = 0) => {
     return;
   }
 
-  if (attempt >= MAX_ATTEMPTS) return;
+  if (performance.now() >= deadline) return;
 
-  requestAnimationFrame(() => scrollToAnchor(anchorId, attempt + 1));
+  requestAnimationFrame(() => scrollToAnchor(anchorId, deadline));
 };

@@ -1,3 +1,7 @@
+'use client';
+
+import { fadeIn } from '@/constants/motion';
+import { motion } from 'motion/react';
 import {
   VscBellDot,
   VscBracketDot,
@@ -14,7 +18,10 @@ import {
 
 export default function BottomBar() {
   return (
-    <div className="bg-sidebar border-border text-muted flex h-6 w-full justify-between border-t text-xs select-none">
+    <motion.div
+      variants={fadeIn}
+      className="bg-sidebar border-border text-muted flex h-6 w-full justify-between border-t text-xs select-none"
+    >
       <div className="flex gap-1">
         <div className="flex items-center justify-center bg-blue-500 px-2">
           <VscRemote size={16} />
@@ -42,6 +49,6 @@ export default function BottomBar() {
         <VscCheckAll size={15} className="-mr-2" /> Prettier
         <VscBellDot size={15} />
       </div>
-    </div>
+    </motion.div>
   );
 }

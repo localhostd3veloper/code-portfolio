@@ -2,13 +2,13 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { sidebarLinks } from '@/constants';
-import { popIn } from '@/constants/motion';
 import { SEARCH_GROUP_ORDER, searchHaystack, searchItems } from '@/constants/search';
 import { useEditorStore } from '@/store';
 import { SearchGroup, SearchItem } from '@/types';
-import { motion } from 'motion/react';
 import { useRouter } from 'next/navigation';
 import { VscLinkExternal, VscSearch } from 'react-icons/vsc';
+
+import QuickPickShell from '@/components/quick-pick-shell';
 
 import { scrollToAnchor } from '@/utils/scroll-to-anchor';
 
@@ -110,53 +110,46 @@ export default function SearchQuickPick() {
   };
 
   return (
-    <div className="fixed inset-0 z-50" onMouseDown={close} onKeyDown={handleKeyDown}>
-      <motion.div
-        {...popIn}
-        style={{ originY: 0 }}
-        className="bg-sidebar border-border absolute top-9 left-1/2 w-[92vw] max-w-[620px] -translate-x-1/2 overflow-hidden rounded-lg border shadow-2xl"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <div className="flex items-center gap-2.5 p-3">
-          <input
-            autoFocus
-            value={query}
-            onChange={(event) => handleQueryChange(event.target.value)}
-            placeholder="Search pages, projects, experience, blogs, socials"
-            className="bg-editor text-foreground placeholder:text-muted w-full border border-blue-500 px-3 py-2 text-sm outline-none"
-          />
-          <VscSearch className="text-foreground h-5 w-5 shrink-0" />
-        </div>
+    <QuickPickShell
+      onDismiss={close}
+      onKeyDown={handleKeyDown}
+      className="w-[92vw] max-w-[620px]"
+    >
+      <div className="flex items-center gap-2.5 p-3">
+        <input
+          autoFocus
+          value={query}
+          onChange={(event) => handleQueryChange(event.target.value)}
+          placeholder="Search pages, projects, experience, blogs, socials"
+          className="bg-editor text-foreground placeholder:text-muted w-full border border-blue-500 px-3 py-2 text-sm outline-none"
+        />
+        <VscSearch className="text-foreground h-5 w-5 shrink-0" />
+      </div>
 
-        <ul
-          ref={listRef}
-          role="listbox"
-          className="max-h-[60vh] overflow-y-auto px-2 py-2"
-        >
-          {sections.length ? (
-            sections.map((section) => (
-              <SearchSection
-                key={section.group}
-                section={section}
-                highlighted={highlighted}
-                onHighlight={setHighlighted}
-                onSelect={runItem}
-              />
-            ))
-          ) : (
-            <li className="text-muted px-4 py-2.5 text-sm select-none">
-              No matching results
-            </li>
-          )}
-        </ul>
+      <ul ref={listRef} role="listbox" className="max-h-[60vh] overflow-y-auto px-2 py-2">
+        {sections.length ? (
+          sections.map((section) => (
+            <SearchSection
+              key={section.group}
+              section={section}
+              highlighted={highlighted}
+              onHighlight={setHighlighted}
+              onSelect={runItem}
+            />
+          ))
+        ) : (
+          <li className="text-muted px-4 py-2.5 text-sm select-none">
+            No matching results
+          </li>
+        )}
+      </ul>
 
-        <div className="border-border text-muted flex gap-4 border-t px-4 py-2 text-xs select-none">
-          <span>↑↓ to navigate</span>
-          <span>Enter to open</span>
-          <span>Esc to dismiss</span>
-        </div>
-      </motion.div>
-    </div>
+      <div className="border-border text-muted flex gap-4 border-t px-4 py-2 text-xs select-none">
+        <span>↑↓ to navigate</span>
+        <span>Enter to open</span>
+        <span>Esc to dismiss</span>
+      </div>
+    </QuickPickShell>
   );
 }
 

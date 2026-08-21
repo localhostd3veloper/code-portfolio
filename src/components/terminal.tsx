@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import { DURATION, EASE } from '@/constants/motion';
 import { useEditorStore } from '@/store';
+import { AnimatePresence, motion } from 'motion/react';
 import {
   VscAdd,
   VscArrowRight,
@@ -66,11 +68,19 @@ export default function Terminal({ collapsePanel }: { collapsePanel: () => void 
         <div className="">
           - Network: <span className="text-blue-400">http://192.168.1.14:3000</span>
         </div>
-        {logs.map((log) => (
-          <ol key={log.id} className="">
-            {log.logline}
-          </ol>
-        ))}
+        <AnimatePresence initial={false}>
+          {logs.map((log) => (
+            <motion.ol
+              key={log.id}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: DURATION.fast, ease: EASE.out }}
+            >
+              {log.logline}
+            </motion.ol>
+          ))}
+        </AnimatePresence>
       </div>
     </div>
   );

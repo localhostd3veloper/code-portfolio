@@ -1,7 +1,7 @@
 'use client';
 
 import { sidebarLinks } from '@/constants';
-import { fade, fadeLeft } from '@/constants/motion';
+import { fadeIn, withStagger } from '@/constants/motion';
 import { useEditorStore } from '@/store';
 import { motion } from 'motion/react';
 import Link from 'next/link';
@@ -20,7 +20,7 @@ export default function Explorer() {
 
   return (
     <motion.aside
-      {...fade()}
+      variants={withStagger(fadeIn, 0.03)}
       className="border-border bg-sidebar flex h-full w-full flex-col overflow-hidden rounded-lg border p-2 shadow-[0_2px_10px_var(--color-shadow)]"
     >
       <div className="mb-2 flex items-center justify-between px-2">
@@ -44,8 +44,8 @@ export default function Explorer() {
       </div>
 
       <nav className="mt-3 flex flex-col gap-1">
-        {sidebarLinks.map(({ label, icon: Icon, color, href }, index) => (
-          <motion.div key={label} {...fadeLeft(index * 0.03)}>
+        {sidebarLinks.map(({ label, icon: Icon, color, href }) => (
+          <motion.div key={label} variants={fadeIn}>
             <Link
               href={href}
               className={`hover:bg-editor/80 flex w-full items-center space-x-2 overflow-hidden rounded-md px-3 py-1.5 text-sm transition-colors duration-150 ${

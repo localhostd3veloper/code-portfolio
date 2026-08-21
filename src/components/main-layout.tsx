@@ -1,7 +1,7 @@
 'use client';
 
-import { Suspense, useEffect, useRef, useState } from 'react';
-import { slideUp } from '@/constants/motion';
+import { useEffect, useRef, useState } from 'react';
+import { fadeIn, staggerContainer } from '@/constants/motion';
 import { useEditorStore } from '@/store';
 import { motion, MotionConfig } from 'motion/react';
 import { usePathname } from 'next/navigation';
@@ -76,7 +76,12 @@ export default function MainLayout({
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="bg-background flex h-dvh min-h-screen flex-col">
+      <motion.div
+        variants={staggerContainer(0.06)}
+        initial="hidden"
+        animate="show"
+        className="bg-background flex h-dvh min-h-screen flex-col"
+      >
         <TopBar />
         <div className="flex flex-1 overflow-hidden">
           <PersistentSidebar togglePanel={togglePanel} toggleSidebar={toggleSidebar} />
@@ -100,9 +105,7 @@ export default function MainLayout({
               <PanelGroup autoSaveId={'editor'} direction="vertical">
                 <Panel defaultSize={80} collapsible order={0}>
                   <main className="bg-panel border-border flex h-full w-full flex-col overflow-hidden rounded-lg border shadow-[0_2px_10px_var(--color-shadow)]">
-                    <Suspense>
-                      <EditorTabs />
-                    </Suspense>
+                    <EditorTabs />
                     <div className="flex-1 overflow-y-auto">{children}</div>
                   </main>
                 </Panel>
@@ -120,7 +123,7 @@ export default function MainLayout({
                   collapsible
                   ref={terminalRef}
                 >
-                  <motion.div {...slideUp} className="h-full w-full">
+                  <motion.div variants={fadeIn} className="h-full w-full">
                     <Terminal collapsePanel={collapsePanel} />
                   </motion.div>
                 </Panel>
@@ -132,7 +135,7 @@ export default function MainLayout({
         <ThemePicker />
         <SearchPalette />
         <BottomBar />
-      </div>
+      </motion.div>
     </MotionConfig>
   );
 }

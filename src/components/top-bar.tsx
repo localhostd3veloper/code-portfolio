@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import { fadeIn } from '@/constants/motion';
+import { motion } from 'motion/react';
 import {
   VscArrowLeft,
   VscArrowRight,
@@ -38,7 +40,10 @@ export default function TopBar() {
   };
 
   return (
-    <div className="bg-sidebar border-border relative z-10 flex w-full items-center justify-between border-b px-2 py-1 text-sm">
+    <motion.div
+      variants={fadeIn}
+      className="bg-sidebar border-border relative z-10 flex w-full items-center justify-between border-b px-2 py-1 text-sm"
+    >
       <div className="flex items-center">
         <VscVscode className="mr-2 h-5 w-5 text-blue-500" />
         <MenuItems />
@@ -63,6 +68,6 @@ export default function TopBar() {
         </button>
         <VscClose />
       </div>
-    </div>
+    </motion.div>
   );
 }
