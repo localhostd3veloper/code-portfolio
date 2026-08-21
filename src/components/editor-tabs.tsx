@@ -37,7 +37,7 @@ export default function EditorTabs() {
     }
   };
   return (
-    <div className="border-border flex overflow-x-auto border">
+    <div className="border-border flex overflow-x-auto border-b">
       <AnimatePresence initial={false}>
         {activeEditors?.map((editor) => (
           <motion.div

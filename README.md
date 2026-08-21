@@ -37,7 +37,8 @@ Some of the tools I love and use daily:
 Want to contribute? Don't worry, I'm always open to new ideas and suggestions.
 
 - [ ] Add more animations, (framer motion)
-- [x] Themes Settings: 10 color themes (5 dark, 5 light) via the settings gear or `Ctrl+K T`
+- [x] Themes Settings: 10 color themes (5 dark, 5 light) via the settings gear or `Ctrl+K Ctrl+T`
+- [x] Search palette: fuzzy search across pages, projects, experience, blogs, repos and socials via the search icon or `Ctrl+K`
 - [ ] Add Shortcuts Page inside Settings
 - [ ] Suggestions?
 

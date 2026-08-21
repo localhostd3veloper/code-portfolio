@@ -33,6 +33,11 @@ Single Zustand store at `src/store/index.ts`, composed from slices in `src/store
 - `editor-slice.ts` holds open tabs (`activeEditors`) and the active tab; `handleNewEditor` focuses an existing tab or opens a new one.
 - `terminal-slice.tsx` holds fake terminal log lines (JSX elements, capped at 50). `MainLayout` appends a fake `GET <path> 200` log on every route change.
 - `theme-slice.ts` holds the active color theme (persisted to localStorage) and the theme quick pick's open state.
+- `search-slice.ts` holds the search palette's open state.
+
+### Search palette
+
+`SearchPalette` (`src/components/search-palette.tsx`, mounted by `MainLayout`) owns the shortcuts (`Ctrl+K`, `Ctrl+P`, `Ctrl+Shift+F`) and renders `SearchQuickPick`. The index is built in `src/constants/search.ts` from `sidebarLinks` plus everything in `src/constants/self.tsx`, so new content in self.tsx becomes searchable with no other change. Results either open an external URL or navigate to `<route>#<anchor>`; anchor ids come from `projectAnchorId`/`experienceAnchorId`, which the project and experience cards use for their `id`. Because `Ctrl+K` opens the palette, the theme quick pick chord is `Ctrl+K Ctrl+T`.
 
 ### Theming
 

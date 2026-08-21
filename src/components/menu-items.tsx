@@ -39,7 +39,7 @@ export default function MenuItems() {
           <button
             onClick={() => setOpenMenu(openMenu === menu.label ? null : menu.label)}
             onMouseEnter={() => openMenu && setOpenMenu(menu.label)}
-            className={`hover:bg-border hidden cursor-pointer rounded px-2 py-0.5 md:block ${
+            className={`hover:bg-border hidden cursor-pointer px-2 py-0.5 md:block ${
               openMenu === menu.label ? 'bg-border' : ''
             }`}
           >
@@ -61,7 +61,7 @@ function MenuDropdown({ menu, onSelect }: { menu: Menu; onSelect: () => void }) 
     <motion.div
       {...popIn}
       style={{ originY: 0 }}
-      className="bg-editor border-border absolute top-full left-0 z-20 mt-1 min-w-[220px] rounded-md border py-1 text-sm shadow-lg"
+      className="bg-editor border-border absolute top-full left-0 z-20 mt-1 min-w-[220px] border p-1 text-sm shadow-md"
     >
       {menu.items.map((item, index) =>
         item.separator ? (
@@ -70,7 +70,7 @@ function MenuDropdown({ menu, onSelect }: { menu: Menu; onSelect: () => void }) 
           <button
             key={`item-${index}-${item.label}`}
             onClick={onSelect}
-            className="hover:bg-list-active hover:text-list-active-fg flex w-full cursor-pointer items-center justify-between px-3 py-1"
+            className="hover:bg-list-active hover:text-list-active-fg flex w-full cursor-pointer items-center justify-between px-3 py-1.5"
           >
             <span>{item.label}</span>
             {item.shortcut && <span className="text-muted text-xs">{item.shortcut}</span>}

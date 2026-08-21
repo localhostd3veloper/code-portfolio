@@ -6,10 +6,10 @@ import { useEditorStore } from '@/store';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { VscColorMode } from 'react-icons/vsc';
+import { VscColorMode, VscSearch } from 'react-icons/vsc';
 
 export default function MobileFloatingBar() {
-  const { handleNewEditor, setThemePickerOpen } = useEditorStore();
+  const { handleNewEditor, setThemePickerOpen, setSearchOpen } = useEditorStore();
   const pathname = usePathname();
 
   return (
@@ -29,6 +29,13 @@ export default function MobileFloatingBar() {
           <Icon className="h-5 w-5" style={{ color }} />
         </Link>
       ))}
+      <button
+        aria-label="Search"
+        onClick={() => setSearchOpen(true)}
+        className="flex items-center justify-center transition-all duration-200 ease-out hover:scale-105"
+      >
+        <VscSearch className="text-foreground h-5 w-5" />
+      </button>
       <button
         aria-label="Change color theme"
         onClick={() => setThemePickerOpen(true)}

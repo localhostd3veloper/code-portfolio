@@ -1,6 +1,7 @@
 'use client';
 
 import { fadeUp, STAGGER } from '@/constants/motion';
+import { projectAnchorId } from '@/constants/search';
 import { IProject } from '@/types';
 import { motion } from 'motion/react';
 import Image from 'next/image';
@@ -18,7 +19,8 @@ export default function ProjectCard({
   return (
     <motion.div
       {...fadeUp(idx * STAGGER)}
-      className="border-border flex flex-col gap-3 border p-4"
+      id={projectAnchorId(project.name)}
+      className="border-border flex scroll-mt-4 flex-col gap-3 border p-4"
     >
       <>
         <Carousel

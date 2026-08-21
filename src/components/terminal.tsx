@@ -25,8 +25,7 @@ export default function Terminal({ collapsePanel }: { collapsePanel: () => void 
   }, [logs]);
   if (!isTerminalOpen) return null;
   return (
-    <div className="Z-50 bg-sidebar flex h-full w-full flex-col px-4 py-2 font-mono text-sm">
-      {/* Header */}
+    <div className="border-border bg-sidebar flex h-full w-full flex-col overflow-hidden rounded-lg border px-4 py-3 font-mono text-sm shadow-[0_2px_10px_var(--color-shadow)]">
       <div className="flex items-center justify-between">
         <div className="text-xs font-light tracking-wide underline decoration-blue-500 underline-offset-4">
           TERMINAL
@@ -45,8 +44,7 @@ export default function Terminal({ collapsePanel }: { collapsePanel: () => void 
         </div>
       </div>
 
-      {/* Prompt Line */}
-      <div className="mt-2 flex items-center gap-2">
+      <div className="mt-3 flex items-center gap-2">
         <VscArrowRight size={14} color="#ef4444" />
         <span className="font-semibold text-green-400">localhostdeveloper@seol</span>
         <span className="">:</span>
@@ -55,10 +53,9 @@ export default function Terminal({ collapsePanel }: { collapsePanel: () => void 
         <span className="text-green-400">bun dev</span>
       </div>
 
-      {/* Startup Logs */}
       <div
         ref={logRef}
-        className="mt-2 ml-5 flex-1 space-y-1 overflow-y-scroll scroll-smooth"
+        className="mt-3 ml-5 flex-1 space-y-1 overflow-y-scroll scroll-smooth"
       >
         <div className="">
           <span className="text-purple-500"> ▲ Next.js 16.2.10</span> (Turbopack)

@@ -1,6 +1,7 @@
 'use client';
 
 import { fadeUp } from '@/constants/motion';
+import { experienceAnchorId } from '@/constants/search';
 import { ExperienceItem } from '@/constants/self';
 import { motion } from 'motion/react';
 import Link from 'next/link';
@@ -51,10 +52,15 @@ export default function ExperienceCard({
     return [yearPart, monthPart].filter(Boolean).join(' ') || '0 mos';
   };
   return (
-    <motion.div {...fadeUp(idx * 0.08)} key={idx} className="relative">
+    <motion.div
+      {...fadeUp(idx * 0.08)}
+      key={idx}
+      id={experienceAnchorId(exp)}
+      className="relative scroll-mt-4"
+    >
       <>
         <span className="absolute top-2 -left-6 h-3 w-3 rounded-full bg-blue-500 shadow-sm" />
-        <div className="bg-editor border-border rounded-lg border p-4">
+        <div className="bg-editor border-border border p-4">
           <div className="text-muted mb-1 text-sm">
             {formatDate(exp.startDate, exp.isActive, 'start')} -{' '}
             {formatDate(exp.endDate, exp.isActive, 'end')} (

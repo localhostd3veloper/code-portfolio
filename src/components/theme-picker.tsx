@@ -29,9 +29,12 @@ export default function ThemePicker() {
 
       const wasPending = chordPending;
       chordPending = false;
-      if (!wasPending || event.key.toLowerCase() !== 't') return;
+      if (!wasPending) return;
+      if (!event.ctrlKey && !event.metaKey) return;
+      if (event.key.toLowerCase() !== 't') return;
 
       event.preventDefault();
+      useEditorStore.getState().setSearchOpen(false);
       useEditorStore.getState().setThemePickerOpen(true);
     };
 

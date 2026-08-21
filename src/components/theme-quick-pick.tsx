@@ -86,17 +86,17 @@ export default function ThemeQuickPick() {
         className="bg-sidebar border-border absolute top-9 left-1/2 w-[90vw] max-w-[600px] -translate-x-1/2 overflow-hidden rounded-lg border shadow-2xl"
         onMouseDown={(event) => event.stopPropagation()}
       >
-        <div className="flex items-center gap-2.5 px-2.5 pt-2.5 pb-1.5">
+        <div className="flex items-center gap-2.5 p-3">
           <input
             autoFocus
             value={query}
             onChange={(event) => handleQueryChange(event.target.value)}
             placeholder="Select Color Theme (Up/Down Keys to Preview)"
-            className="bg-editor text-foreground placeholder:text-muted w-full rounded-md border border-blue-500 px-2.5 py-1.5 text-sm outline-none"
+            className="bg-editor text-foreground placeholder:text-muted w-full border border-blue-500 px-3 py-2 text-sm outline-none"
           />
           <VscColorMode className="text-foreground h-5 w-5 shrink-0" />
         </div>
-        <ul role="listbox" className="max-h-96 overflow-y-auto pb-1.5">
+        <ul role="listbox" className="max-h-96 overflow-y-auto px-2 py-2">
           {filteredThemes.length ? (
             (['dark', 'light'] as const).map((type) => (
               <ThemeSection
@@ -109,7 +109,7 @@ export default function ThemeQuickPick() {
               />
             ))
           ) : (
-            <li className="text-muted px-4 py-2 text-sm select-none">
+            <li className="text-muted px-4 py-2.5 text-sm select-none">
               No color themes found
             </li>
           )}
@@ -136,7 +136,7 @@ function ThemeSection({
 
   return (
     <>
-      <li className="text-muted border-border mt-1 border-t px-4 pt-1.5 pb-0.5 text-xs select-none first:mt-0 first:border-t-0">
+      <li className="text-muted border-border mt-1 border-t px-4 pt-2 pb-1 text-xs select-none first:mt-0 first:border-t-0">
         {type} themes
       </li>
       {sectionThemes.map((t) => (
@@ -144,7 +144,7 @@ function ThemeSection({
           key={t.id}
           role="option"
           aria-selected={t.id === highlighted}
-          className={`flex cursor-pointer items-center justify-between px-4 py-1 text-sm ${
+          className={`flex cursor-pointer items-center justify-between px-4 py-1.5 text-sm ${
             t.id === highlighted ? 'bg-list-active text-list-active-fg' : ''
           }`}
           onMouseEnter={() => onPreview(t.id)}
