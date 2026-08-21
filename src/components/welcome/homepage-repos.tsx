@@ -13,7 +13,7 @@ export default function HomepageRepos() {
       href={url}
       rel="noopener noreferrer"
       target="_blank"
-      className="border-border flex flex-col border p-2 transition-colors duration-150 hover:border-blue-400 hover:text-blue-400 md:w-3/4"
+      className="border-border flex flex-col border p-2 transition-colors duration-150 hover:border-blue-400 hover:text-blue-400"
     >
       <>
         <h3 className="flex items-center gap-2 font-semibold">

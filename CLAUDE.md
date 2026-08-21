@@ -55,7 +55,13 @@ Custom Tailwind color tokens (`bg-editor`, `bg-panel`, `bg-sidebar`, `border-bor
 
 ### Content
 
-All portfolio content (social links, projects, blogs) is hardcoded in `src/constants/self.tsx`; pages render from these constants. There is no CMS or API. Shared types are in `src/types/index.ts`. Page-specific components are colocated under `src/app/<route>/components/`.
+Projects, experience, blogs, and repos live in `src/data/*.json` (`projects.json`, `experience.json`, `blogs.json`, `repos.json`); `src/constants/self.tsx` imports each and derives the typed export pages consume (`projectsData`, `experienceItems`, `blogs`, `homepageRepos`), computing project `imageURLs` from `imageCount` via `projectImages`. Social links and the typewriter strings stay hardcoded in `self.tsx` since they're rarely-changed and (for socials) tied to `react-icons` component references that don't serialize to JSON. Shared types, including the `*Record` JSON shapes, are in `src/types/index.ts`. Page-specific components are colocated under `src/app/<route>/components/`.
+
+Project gallery images live at `public/projects/<slug>/1.png, 2.png, ...`, where `<slug>` is `slugify(project.name)` (`src/utils/slugify.ts`) — the same slug the search index uses for anchor ids. To add a project by hand: add an entry to `projects.json` and drop numbered PNGs in the matching folder.
+
+### Admin panel
+
+`/admin` (plus `/admin/experience`, `/admin/blogs`, `/admin/repos`) is a local-only CRUD UI over the JSON files, guarded by `isDev()` (`src/utils/dev-guard.ts`) in `src/app/admin/layout.tsx` — it 404s in production, so it never ships live on Vercel. Each section is a thin wrapper (`src/app/admin/components/admin-*.tsx`) around the shared `useEntityCrud` hook (`src/app/admin/hooks/use-entity-crud.ts`) and a generic `EntityList` sidebar; the API routes under `src/app/api/admin/*/route.ts` are built from the `createCrudRoute` factory (`src/utils/crud-route.ts`), which reads/writes the JSON file directly via `src/utils/json-store.ts`. Projects additionally get `/api/admin/projects/images` for uploading gallery images (converted to numbered PNGs with `sharp`, matching the `public/projects/<slug>/` convention) and a slug-uniqueness check on save.
 
 ## Code style
 

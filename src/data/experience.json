@@ -1,0 +1,72 @@
+[
+  {
+    "startDate": "2026-02-01",
+    "endDate": "2030-06-30",
+    "isActive": true,
+    "cardTitle": "Lead Software Engineer",
+    "cardSubtitle": "Oraczen AI",
+    "jobRole": "Product Team",
+    "cardDetailedText": "- Adding...",
+    "url": "https://oraczen.ai"
+  },
+  {
+    "startDate": "2025-06-01",
+    "endDate": "2026-01-31",
+    "cardTitle": "Principal Engineer",
+    "jobRole": "Core Product Team",
+    "cardSubtitle": "Turium AI",
+    "cardDetailedText": "- Led a cross-functional team of 7-8 developers to build a full-scale SaaS platform from scratch, integrating AI chat systems, real-time 1:1 and team calling, and event management features, achieving end-to-end delivery within aggressive timelines.\n- Collaborated directly with the founder and product team to conceptualize, design, and prioritize roadmap features, driving 25%+ growth in user engagement and retention through rapid prototyping and feedback loops.\n- Defined and enforced coding standards across all engineering teams, resulting in a more consistent user experience and a 30% reduction in code refactoring time.",
+    "url": "https://turium.ai",
+    "isActive": false
+  },
+  {
+    "startDate": "2024-07-01",
+    "endDate": "2025-05-31",
+    "cardTitle": "SDE II",
+    "jobRole": "Founding Engineer",
+    "cardSubtitle": "Treacle Technologies",
+    "cardDetailedText": "- Led and contributed to full-stack development efforts alongside a team of 5+ developers, while setting up scalable development pipelines to streamline workflows.\n- Redesigned the database architecture, increasing scalability by 10x, supporting future growth and improving query performance.\n- Reduced CPU utilization on low-resource VMs from 90%+ to 15-20% by identifying performance bottlenecks and refactoring resource-heavy processes.\n- Migrated a monolithic architecture to microservices, resulting in 5x faster development and debugging capabilities.\n- Implemented automated CI/CD pipelines using Docker and custom shell scripts, enabling seamless deployment for 10+ unique client environments.\n- Optimized MongoDB aggregation pipelines, reducing query times from 10+ seconds to 700ms, dramatically improving API response times.",
+    "url": "https://treacletech.com",
+    "isActive": false
+  },
+  {
+    "startDate": "2023-09-01",
+    "endDate": "2024-08-31",
+    "cardTitle": "Full Stack Lead",
+    "jobRole": "Founding Engineer",
+    "cardSubtitle": "GENIE AI",
+    "cardDetailedText": "- Managed a distributed team of 10 developers across multiple time zones, establishing efficient development pipelines and assigning tasks to ensure continuous delivery.\n- Led agile sprints across 3 cross-functional teams, consistently delivering client demos on schedule and improving overall client satisfaction.\n- Refactored and optimized legacy codebases, removing ~2,000+ lines of redundant code per project to improve maintainability and future developer onboarding.\n- Conducted in-depth code reviews for an average of 10 GitHub pull requests daily, enforcing best practices and significantly improving team-wide code quality.",
+    "url": "https://albisai.com/",
+    "isActive": false
+  },
+  {
+    "startDate": "2022-10-01",
+    "endDate": "2022-12-31",
+    "cardTitle": "Frontend Intern",
+    "jobRole": "Frontend Developer",
+    "cardSubtitle": "Treacle Technologies",
+    "cardDetailedText": "- Translated complex Figma designs into fully responsive and interactive React-based user interfaces, achieving a 100% match to design specifications.\n- Optimized UI components for performance, reducing load times by 20% and enhancing the overall user experience.\n- Gained hands-on experience with cyber-attack simulations (SQL injection, XSS, DoS), strengthening understanding of secure coding practices and improving system resilience.",
+    "url": "https://treacletech.com",
+    "isActive": false
+  },
+  {
+    "startDate": "2022-07-01",
+    "endDate": "2022-08-31",
+    "cardTitle": "SDE Intern",
+    "jobRole": "Core Product Team",
+    "cardSubtitle": "Listnr, Inc.",
+    "cardDetailedText": "- Worked closely with the CTO and the CEO to develop/write features on the platform listnr.fm\n- Replicating complex UI's from the wireframes and parallelly writing logic for the same\n- Improving the lighthouse score by reducing the overall bundle size of the web-pack and by using the best practices.\n- Co-authored pull requests on GitHub with other engineers on the team",
+    "url": "https://listnr.fm",
+    "isActive": false
+  },
+  {
+    "startDate": "2020-10-01",
+    "endDate": "2022-06-31",
+    "cardTitle": "Trainee Intern & Full Stack Web Developer Intern",
+    "jobRole": "Founding Engineer",
+    "cardSubtitle": "Botosynthesis®",
+    "cardDetailedText": "Developed fully-fledged Full-Stack Applications collaborating with other\n      engineers for various companies using MERN.\n      Developed complex conversational APIs and Algorithms. I've also played a major\n      role at the the backend of a few conventional AI platforms.\n      Working on projects and simultaneously creating SDLC for the same",
+    "url": "https://botosynthesis.ai/",
+    "isActive": false
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Finsiq",
+    "description": "Finsiq is a free, zero-login, highly private financial calculation and planning tool. By removing the friction of account creation, Finsiq empowers the public to seamlessly calculate their wealth, plan for the future, and bookmark their unique scenarios. It sets itself apart through data privacy (Local Storage) and \"Unique Insights\" that go beyond basic numbers.",
+    "techStack": ["nextjs", "mathematics"],
+    "projectURL": "https://finsiq.vercel.app/",
+    "imageCount": 3
+  },
+  {
+    "name": "Saanjh",
+    "description": "Saanjh is a browser game about walking a flock of sheep and goats up a Himalayan ridge, endless and procedurally generated, with no score, timer, or death, only the day cycle ending. Built with Phaser for the scene and React for the shell, it runs a Supabase-backed presence layer, installs as a PWA, and plays fully offline.",
+    "techStack": ["Phaser", "React", "Supabase", "TailwindCSS", "Vite"],
+    "projectURL": "https://saanjh.pages.dev",
+    "imageCount": 3
+  },
+  {
+    "name": "r3ckon-style",
+    "description": "r3ckon-style is a Claude Code skill library: six skills bundled as one plugin that enforce a personal set of coding and prose conventions, from no comments and guard clauses to Zod parsing at boundaries and humanized writing, so an agent's output reads the way I'd write it myself. The docs site lists every rule with the bad version and its replacement side by side, filterable by universal, frontend, backend, and git.",
+    "techStack": ["Claude Code Plugin", "HTML", "CSS", "JavaScript"],
+    "projectURL": "https://localhostd3veloper.github.io/r3ckon-style/",
+    "imageCount": 2
+  },
+  {
+    "name": "Breeze",
+    "description": "Breeze is a full-stack AI chat application built with Next.js and FastAPI. It supports real-time LLM streaming via Ollama, conversation persistence in MongoDB, and a voice mode with live speech-to-text, text-to-speech, and a Rive-animated persona. Summarization uses OpenAI, with Langfuse observability and Tavily-powered web search.",
+    "techStack": ["AI Elements", "Next.JS", "React", "TailwindCSS", "Zustand", "More.."],
+    "projectURL": "https://breeze.localhostdeveloper.com",
+    "imageCount": 4
+  },
+  {
+    "name": "Faultline.ai",
+    "description": "Faultline AI is an AI-powered production-readiness review tool. It accepts engineering artifacts (like API specs), runs heuristic analysis against them, and uses an LLM agent to evaluate findings by severity and confidence, helping teams identify issues before shipping to production.",
+    "techStack": ["shadcn/ui", "Next.JS", "React", "TailwindCSS", "Zustand", "More.."],
+    "projectURL": "https://faultline-ai-six.vercel.app/",
+    "imageCount": 4
+  },
+  {
+    "name": "Code Portfolio",
+    "description": "A personal developer portfolio built with Next.js, React, and TailwindCSS, showcasing Gautam Anand's projects, work experience, and technical blogs. Features a typewriter hero, project gallery with image carousels, a work experience timeline, and links to social profiles, all self-hosted and open-source",
+    "techStack": ["Next.JS", "React", "TailwindCSS", "Zustand", "More.."],
+    "projectURL": "#",
+    "imageCount": 3
+  },
+  {
+    "name": "Mac OS Clone",
+    "description": "A clone of the Mac OS desktop. It is a static website",
+    "techStack": ["React", "TailwindCSS", "LottieFiles"],
+    "projectURL": "https://mac-os-clone-ten.vercel.app/",
+    "imageCount": 2
+  }
+]

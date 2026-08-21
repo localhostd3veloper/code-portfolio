@@ -3,19 +3,20 @@ import { projectsData } from '@/constants/self';
 import Reveal from '@/components/motion/reveal';
 import Stagger from '@/components/motion/stagger';
 
-import ProjectCard from './components/project-card';
+import ProjectsExplorer from './components/projects-explorer';
 
 export default function ProjectsPage() {
   return (
-    <Stagger startDelay={0.12} className="flex h-full w-full flex-col gap-2 p-3">
+    <Stagger
+      startDelay={0.12}
+      className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-6 md:px-6 md:py-10"
+    >
       <Reveal>
         <h1 className="text-2xl font-semibold">Projects</h1>
       </Reveal>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {projectsData.map((project) => (
-          <ProjectCard key={project.name} project={project} />
-        ))}
-      </div>
+      <Reveal variant="rise">
+        <ProjectsExplorer projects={projectsData} />
+      </Reveal>
     </Stagger>
   );
 }

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Javascript Essentials 👨🏼‍💻",
+    "description": "A collection of Javascript Essentials",
+    "hashtags": ["#javascript", "#codenewbie", "#webdev", "#programming"],
+    "url": "https://dev.to/localhostd3veloper/javascript-essentials-40he",
+    "imgURL": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fcikhxmaw2liabhjj4ojp.JPG"
+  },
+  {
+    "name": "Map, Filter and Reduce in Javascript 👨🏼‍💻",
+    "description": "A collection of Higher Order Functions",
+    "hashtags": ["#javascript", "#codenewbie", "#programming", "#tutorial"],
+    "url": "https://dev.to/localhostd3veloper/map-filter-and-reduce-in-javascript-51fj",
+    "imgURL": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3ruql1kl0atctnan11sp.JPG"
+  },
+  {
+    "name": "Javascript Sort: Simplified 👨🏼‍💻",
+    "description": "From Basics to writing your own Compartor function",
+    "hashtags": ["#compartor", "#javascript", "#webdev", "#tutorial"],
+    "url": "https://dev.to/localhostd3veloper/javascript-sort-simplified-akm",
+    "imgURL": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpvtyjw1hku0xp7pfsfio.JPG"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "code-portfolio",
+    "description": "This very website, self written source code",
+    "url": "https://github.com/localhostd3veloper/code-portfolio"
+  },
+  {
+    "name": "noobjs",
+    "description": "This is a headstart javascript guid e for absolute beginners",
+    "url": "https://github.com/localhostd3veloper/noobjs"
+  },
+  {
+    "name": "notion-replication",
+    "description": "This is Notion - Task Page clone with Drag and Drop functionality",
+    "url": "https://github.com/localhostd3veloper/notion-replication"
+  },
+  {
+    "name": "realtime-chat-app",
+    "description": "A realtime chat application to demonstrate websockets with react and nodejs",
+    "url": "https://github.com/localhostd3veloper/realtime-chat-app"
+  },
+  {
+    "name": "r3ckon-style",
+    "description": "Six Claude Code skills that make an agent write code and prose the way I do.",
+    "url": "https://localhostd3veloper.github.io/r3ckon-style/"
+  }
+]

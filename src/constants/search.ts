@@ -1,6 +1,8 @@
 import { SearchGroup, SearchItem } from '@/types';
 import { VscBook, VscBriefcase, VscGraph, VscRepo } from 'react-icons/vsc';
 
+import { slugify } from '@/utils/slugify';
+
 import { sidebarLinks } from '.';
 import {
   blogs,
@@ -20,12 +22,6 @@ export const SEARCH_GROUP_ORDER: SearchGroup[] = [
   'Repositories',
   'Socials',
 ];
-
-const slugify = (value: string) =>
-  value
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
 
 export const projectAnchorId = (name: string) => `project-${slugify(name)}`;
 

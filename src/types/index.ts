@@ -16,6 +16,39 @@ export interface IProject {
   imageURLs: string[];
 }
 
+export interface ProjectRecord {
+  name: string;
+  description: string;
+  techStack: string[];
+  projectURL: string;
+  imageCount: number;
+}
+
+export interface ExperienceRecord {
+  startDate: string;
+  endDate: string;
+  cardTitle: string;
+  jobRole: string;
+  cardSubtitle: string;
+  cardDetailedText: string;
+  url: string;
+  isActive: boolean;
+}
+
+export interface BlogRecord {
+  name: string;
+  description: string;
+  hashtags: string[];
+  url: string;
+  imgURL: string;
+}
+
+export interface RepoRecord {
+  name: string;
+  description: string;
+  url: string;
+}
+
 export type SearchGroup =
   | 'Pages'
   | 'Projects'
