@@ -1,9 +1,4 @@
-import { stagger, Variants } from 'motion/react';
-
-export interface EntranceVariant {
-  hidden: Record<string, unknown>;
-  show: { transition?: Record<string, unknown>; [key: string]: unknown };
-}
+import { stagger, TargetAndTransition, Variants } from 'motion/react';
 
 export const EASE = {
   out: [0.16, 1, 0.3, 1],
@@ -21,17 +16,17 @@ export const SPRING = {
   indicator: { type: 'spring', stiffness: 500, damping: 40 },
 } as const;
 
-export const fadeIn: EntranceVariant = {
+export const fadeIn: Variants = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { duration: DURATION.base, ease: EASE.out } },
 };
 
-export const fadeRise: EntranceVariant = {
+export const fadeRise: Variants = {
   hidden: { opacity: 0, y: 4 },
   show: { opacity: 1, y: 0, transition: { duration: DURATION.base, ease: EASE.out } },
 };
 
-export const fadeSoft: EntranceVariant = {
+export const fadeSoft: Variants = {
   hidden: { opacity: 0, filter: 'blur(6px)' },
   show: {
     opacity: 1,
@@ -46,20 +41,23 @@ export const staggerContainer = (interval = 0.05, startDelay = 0): Variants => (
 });
 
 export const withStagger = (
-  base: EntranceVariant,
+  base: Variants,
   interval: number,
   startDelay = 0,
-): Variants =>
-  ({
+): Variants => {
+  const show = base.show as TargetAndTransition;
+
+  return {
     hidden: base.hidden,
     show: {
-      ...base.show,
+      ...show,
       transition: {
-        ...base.show.transition,
+        ...show.transition,
         delayChildren: stagger(interval, { startDelay }),
       },
     },
-  }) as Variants;
+  };
+};
 
 export const overlayFade = {
   initial: { opacity: 0 },

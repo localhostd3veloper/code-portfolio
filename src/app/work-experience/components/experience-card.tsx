@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { fadeRise } from '@/constants/motion';
 import { experienceAnchorId } from '@/constants/search';
 import { ExperienceItem } from '@/constants/self';
@@ -8,6 +9,14 @@ import Link from 'next/link';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
 export default function ExperienceCard({ exp }: { exp: ExperienceItem }) {
+  const [endDate, setEndDate] = useState(exp.endDate);
+
+  useEffect(() => {
+    if (!exp.isActive) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setEndDate(new Date());
+  }, [exp.isActive]);
+
   const formatDate = (
     date: Date | null,
     isActive: boolean,
@@ -56,7 +65,7 @@ export default function ExperienceCard({ exp }: { exp: ExperienceItem }) {
         <div className="text-muted mb-1 text-sm">
           {formatDate(exp.startDate, exp.isActive, 'start')} -{' '}
           {formatDate(exp.endDate, exp.isActive, 'end')} (
-          {duration(exp.startDate, exp.isActive ? new Date() : exp.endDate)})
+          {duration(exp.startDate, endDate)})
         </div>
         <div className="text-base font-semibold">{exp.cardTitle}</div>
         <div className="text-muted mb-2 text-sm">

@@ -24,7 +24,7 @@ export default function Reveal({
 }) {
   const base = VARIANT_MAP[variant];
   const variants: Variants =
-    interval === undefined ? (base as Variants) : withStagger(base, interval, startDelay);
+    interval === undefined ? base : withStagger(base, interval, startDelay);
 
   return (
     <motion.div variants={variants} className={className}>
