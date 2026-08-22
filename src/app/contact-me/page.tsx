@@ -3,6 +3,15 @@ import { socialMediaLinks } from '@/constants/self';
 import Reveal from '@/components/motion/reveal';
 import Stagger from '@/components/motion/stagger';
 
+import { buildMetadata } from '@/utils/seo';
+
+export const metadata = buildMetadata({
+  title: 'Contact Me',
+  description:
+    'Get in touch with Gautam Anand. Connect on GitHub, LinkedIn, Dev.to, and more.',
+  path: '/contact-me',
+});
+
 export default function ContactMePage() {
   return (
     <Stagger

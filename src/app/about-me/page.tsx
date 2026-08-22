@@ -7,6 +7,15 @@ import Reveal from '@/components/motion/reveal';
 import Stagger from '@/components/motion/stagger';
 import TypewriterEffect from '@/components/typewriter-effect';
 
+import { buildMetadata } from '@/utils/seo';
+
+export const metadata = buildMetadata({
+  title: 'About Me',
+  description:
+    'Full stack engineer specializing in Next.js, React, and TypeScript. Background, skills, work history, and interests outside of code.',
+  path: '/about-me',
+});
+
 const YEARS_SHIPPING = 5;
 
 const INTERESTS = [

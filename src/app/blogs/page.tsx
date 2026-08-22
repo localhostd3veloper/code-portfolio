@@ -1,7 +1,16 @@
 import Reveal from '@/components/motion/reveal';
 import Stagger from '@/components/motion/stagger';
 
+import { buildMetadata } from '@/utils/seo';
+
 import BlogCards from './blog-cards';
+
+export const metadata = buildMetadata({
+  title: 'Blogs',
+  description:
+    'Articles on frontend engineering, Next.js, and web development, written by Gautam Anand.',
+  path: '/blogs',
+});
 
 export default function BlogsPage() {
   return (

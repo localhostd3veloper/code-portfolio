@@ -1,3 +1,5 @@
+import { Metadata } from 'next';
+
 import Reveal from '@/components/motion/reveal';
 import Stagger from '@/components/motion/stagger';
 import ContactCard from '@/components/welcome/contact-card';
@@ -6,6 +8,10 @@ import Hero from '@/components/welcome/hero';
 import HomepageRepos from '@/components/welcome/homepage-repos';
 import QuickLinks from '@/components/welcome/quick-links';
 import SocialLinks from '@/components/welcome/social-links';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 export default function WelcomePage() {
   return (

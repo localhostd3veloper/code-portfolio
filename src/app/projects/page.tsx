@@ -3,7 +3,16 @@ import { projectsData } from '@/constants/self';
 import Reveal from '@/components/motion/reveal';
 import Stagger from '@/components/motion/stagger';
 
+import { buildMetadata } from '@/utils/seo';
+
 import ProjectsExplorer from './components/projects-explorer';
+
+export const metadata = buildMetadata({
+  title: 'Projects',
+  description:
+    'A collection of web apps and side projects built by Gautam Anand using Next.js, React, TypeScript, and modern web tools.',
+  path: '/projects',
+});
 
 export default function ProjectsPage() {
   return (

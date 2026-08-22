@@ -3,7 +3,16 @@ import { experienceItems } from '@/constants/self';
 import Reveal from '@/components/motion/reveal';
 import Stagger from '@/components/motion/stagger';
 
+import { buildMetadata } from '@/utils/seo';
+
 import ExperienceCard from './components/experience-card';
+
+export const metadata = buildMetadata({
+  title: 'Work Experience',
+  description:
+    'Work history and career timeline of Gautam Anand, a full stack engineer, including roles in product and software engineering teams.',
+  path: '/work-experience',
+});
 
 export default function WorkExperiencePage() {
   return (
