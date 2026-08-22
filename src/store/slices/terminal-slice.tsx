@@ -7,11 +7,15 @@ export interface LogType {
   timestamp: Date;
 }
 
+export type TerminalTabId = 'bun' | 'shell';
+
 export interface TerminalSlice {
   logs: LogType[];
   addLog: (log: JSX.Element) => void;
   isTerminalOpen: boolean;
   toggleTerminal: () => void;
+  activeTerminalTab: TerminalTabId;
+  setActiveTerminalTab: (tab: TerminalTabId) => void;
 }
 
 const MAX_LOGS = 50;
@@ -63,4 +67,8 @@ export const createTerminalSlice: StateCreator<TerminalSlice> = (set) => ({
   isTerminalOpen: true,
 
   toggleTerminal: () => set((state) => ({ isTerminalOpen: !state.isTerminalOpen })),
+
+  activeTerminalTab: 'bun',
+
+  setActiveTerminalTab: (tab) => set({ activeTerminalTab: tab }),
 });
