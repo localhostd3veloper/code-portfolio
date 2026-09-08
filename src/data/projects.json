@@ -22,8 +22,8 @@
   },
   {
     "name": "Breeze",
-    "description": "Breeze is a full-stack AI chat application built with Next.js and FastAPI. It supports real-time LLM streaming via Ollama, conversation persistence in MongoDB, and a voice mode with live speech-to-text, text-to-speech, and a Rive-animated persona. Summarization uses OpenAI, with Langfuse observability and Tavily-powered web search.",
-    "techStack": ["AI Elements", "Next.JS", "React", "TailwindCSS", "Zustand", "More.."],
+    "description": "Breeze is a self-hosted AI chat app: prompts run against a model on your own Ollama instance and the transcript lives in your own MongoDB, with only web search and tracing ever reaching the internet, off by default. Replies can render as live charts, tables, and other widgets from a small JSON grammar the model writes, not just plain text.",
+    "techStack": ["Next.JS", "FastAPI", "React", "MongoDB", "TailwindCSS", "More.."],
     "projectURL": "https://breeze.localhostdeveloper.com",
     "imageCount": 4
   },
@@ -42,10 +42,17 @@
     "imageCount": 3
   },
   {
-    "name": "Mac OS Clone",
-    "description": "A clone of the Mac OS desktop. It is a static website",
-    "techStack": ["React", "TailwindCSS", "LottieFiles"],
-    "projectURL": "https://mac-os-clone-ten.vercel.app/",
-    "imageCount": 2
+    "name": "Vibe Fitness Arena",
+    "description": "A local business site for a gym in Kattedan, Hyderabad: membership plans, a free-trial booking form, Google reviews pulled onto the page, and a gallery of the floor, alongside an admin panel for managing that content without touching code.",
+    "techStack": ["Next.JS", "React", "TailwindCSS", "Admin Panel"],
+    "projectURL": "https://vibe-fitness-arena.vercel.app/",
+    "imageCount": 3
+  },
+  {
+    "name": "Ghar Ki Shaadi",
+    "description": "A portfolio site for a wedding film and photography studio, built around four chapters of a wedding day (pre-wedding, getting ready, the celebration, the couple) as horizontally scrolling edits rather than a grid, plus service packages and an enquiry form.",
+    "techStack": ["Next.JS", "React", "TailwindCSS"],
+    "projectURL": "https://ghar-ki-shaadi.com/",
+    "imageCount": 3
   }
 ]
